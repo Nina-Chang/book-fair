@@ -1,61 +1,135 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import ticketCompleted from '../../image/ticket-completed-brown.png';
+import { Link } from "react-router-dom";
+import ticketCompleted from "../../image/ticket-completed-brown.png";
+import ticketrip1 from "../../image/ticket-ripped-1-brown-sm.png";
+import ticketrip2 from "../../image/ticket-ripped-2-brown-sm.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faStore,
+  faTicket,
+  faVanShuttle,
+  faFolderOpen,
+  faMessage,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Ticket=()=>{
-    return(
-        // NavBar Start
-        <StyledAppNavBar>
-        <StyledAppNavBarTicket>
-          <img src={ticketCompleted} alt=""/>
-          <span><Link to='/exhibitor' style={{color:'inherit',textDecoration:'none',backgroundColor:'#BF9B7A'}}>參展商</Link></span>
-        </StyledAppNavBarTicket>
-        <StyledAppNavBarTicket>
-          <img src={ticketCompleted} alt=""/>
-          <span><Link to='/ticketinfo' style={{color:'inherit',textDecoration:'none',backgroundColor:'#BF9B7A'}}>購票資訊</Link></span>
-        </StyledAppNavBarTicket>
-        <StyledAppNavBarTicket>
-          <img src={ticketCompleted} alt=""/>
-          <span><Link to='/trasport' style={{color:'inherit',textDecoration:'none',backgroundColor:'#BF9B7A'}}>交通資訊</Link></span>
-        </StyledAppNavBarTicket>
-        <StyledAppNavBarTicket>
-          <img src={ticketCompleted} alt=""/>
-          <span><Link to='/archives' style={{color:'inherit',textDecoration:'none',backgroundColor:'#BF9B7A'}}>檔案</Link></span>
-        </StyledAppNavBarTicket>
-        <StyledAppNavBarTicket>
-          <img src={ticketCompleted} alt=""/>
-          <span><Link to='/contact-us' style={{color:'inherit',textDecoration:'none',backgroundColor:'#BF9B7A'}}>聯絡我們</Link></span>
-        </StyledAppNavBarTicket>
-      </StyledAppNavBar>
-        // NavBar End  
-    );
-}
+const Ticket = () => {
+  return (
+    // NavBar Start
+    <StyledAppNavBar>
+      <StyledAppNavBarTicket>
+        <img src={ticketCompleted} alt="" />
+        <span>
+          <LinkStyle to="/exhibitor">
+            <FontAwesomeIcon icon={faStore} className="Icon" />
+          </LinkStyle>
+        </span>
+      </StyledAppNavBarTicket>
+      <StyledAppNavBarTicket>
+        <img src={ticketCompleted} alt="" />
+        <span>
+          <LinkStyle to="/ticketinfo">
+            <FontAwesomeIcon icon={faTicket} className="Icon" />
+          </LinkStyle>
+        </span>
+      </StyledAppNavBarTicket>
+      <StyledAppNavBarTicket>
+        <img src={ticketCompleted} alt="" />
+        <span>
+          <LinkStyle to="/trasport">
+            <FontAwesomeIcon icon={faVanShuttle} className="Icon" />
+          </LinkStyle>
+        </span>
+      </StyledAppNavBarTicket>
+      <StyledAppNavBarTicket>
+        <img src={ticketCompleted} alt="" />
+        <span>
+          <LinkStyle to="/archives">
+            <FontAwesomeIcon icon={faFolderOpen} className="Icon" />
+          </LinkStyle>
+        </span>
+      </StyledAppNavBarTicket>
+      <StyledAppNavBarTicket>
+        <img src={ticketCompleted} alt="" />
+        <span>
+          <LinkStyle to="/contact-us">
+            <FontAwesomeIcon icon={faMessage} className="Icon" />
+          </LinkStyle>
+        </span>
+      </StyledAppNavBarTicket>
+    </StyledAppNavBar>
+    // NavBar End
+  );
+};
 
 export default Ticket;
 
 // Layout Navbar Start \\
-const StyledAppNavBar=styled.div`
+const StyledAppNavBar = styled.div`
   overflow: hidden;
   display: block;
   background-color: transparent;
-  `
-const StyledAppNavBarTicket=styled.div`
+  /* position: fixed; */
+  /* @media (min-width: 769px) {
+    position: fixed;
+    left: 10%;
+    bottom:10%;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    >div{
+      transform: rotate(-90deg);
+    }
+  } */
+`;
+const StyledAppNavBarTicket = styled.div`
   position: relative;
-  top:0;
+  top: 2%;
   left: 15%;
   background-color: transparent;
-  
-  &:hover{
+  background-image: url({ticketCompleted});
+  width: 250px;
+  height: 130px;
+  /* background-image: url(${(props) => props.img}); */
+  /* width: 100%;
+  height: auto; */
+
+  &:hover {
     left: 5%;
   }
-  
-  span{
-    position:absolute;
-    top:40%;
-    left:5%;
-    font-size: 38px;
-    background-color: #BF9B7A;
+
+  &:active {
+    background-image: url(${ticketrip1});
   }
-`
+
+  span {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    font-size: 38px;
+    background-color: #bf9b7a;
+    .Icon {
+      background-color: transparent;
+      font-size: 50px;
+    }
+  }
+  /* @media (min-width: 769px) {
+    left: 0%;
+    
+    width: 250px;
+    height: 300px;
+    
+  }
+  */
+`;
+const LinkStyle = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  background-color: #bf9b7a;
+`;
+// const StyledIcon=styled.FontAwesomeIcon`
+//   background-color: transparent;
+//   color: red;
+// `
+
 // Layout Navbar End \\
