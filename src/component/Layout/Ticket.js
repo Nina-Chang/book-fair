@@ -12,6 +12,7 @@ import {
   faFolderOpen,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
+import LinkStyle from "../Common/LinkStyle";
 
 const Ticket = () => {
   return (
@@ -36,7 +37,7 @@ const Ticket = () => {
       <StyledAppNavBarTicket>
         <img src={ticketCompleted} alt="" />
         <span>
-          <LinkStyle to="/trasport">
+          <LinkStyle to="/transport">
             <FontAwesomeIcon icon={faVanShuttle} className="Icon" />
           </LinkStyle>
         </span>
@@ -122,11 +123,12 @@ const StyledAppNavBarTicket = styled.div`
   }
   */
 `;
-const LinkStyle = styled(Link)`
-  color: inherit;
-  text-decoration: none;
-  background-color: #bf9b7a;
-`;
+// const LinkStyle = styled(Link)`
+//   color: inherit;
+//   text-decoration: none;
+//   background-color: #bf9b7a;
+// `;
+
 // const StyledIcon=styled.FontAwesomeIcon`
 //   background-color: transparent;
 //   color: red;
