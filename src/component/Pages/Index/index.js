@@ -1,83 +1,44 @@
+import { faTemperature1 } from "@fortawesome/free-solid-svg-icons";
+import gsap from "gsap";
+import * as ScrollMagic from "scrollmagic"
+import { ScrollMagicPluginIndicator } from "scrollmagic-plugins"
+// import { ScrollMagicPluginGsap } from "scrollmagic-plugins";
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import indexPage from '../../../image/index-page.jpg';
 import wood from '../../../image/wood.jpg';
-
-const Index=()=>{
-    return(
-        <StyledAppContainer>
-          {/*Index-Content Section1 Start  */}
-            <StyledSection1Container>
-                <StyledAppImgContainer>
-                    <img src={indexPage} alt=""/>
-                </StyledAppImgContainer>
-                <div className='info'>
-                <h2 className='para'>個的學，露好看好像真物難出。
-                    透很喜參拆後的你們：是這樣寶貝臉的，
-                    學的人，日快的本你還才的公打因還真，
-                    好了起來還他的一靜的讓他⋯還騙要這麼才有。
-                    <p/>一直覺可以吃以買您好，我已經死星期來找來就不
-                    ，最近的的圖心裡，不是會覺得為了。
-                    年的抽為今晚將自己朋友的都面，沒有人很很棒的
-                    ，現己覺得狗第天占，還不起來洗雖然該就，
-                    緊在攻擊實現疾啊發現了，我來說。好厲害不過
-                    怎麼太的眼神原本話，他絕英文每歌喜歡的，的認適合。
-                </h2>
-                </div>
-            </StyledSection1Container>
-            {/* Index-Content Section1 End */}
-
-            {/* Index-Content Section2 Start */}
-            <StyledSection2Container>
-                <Bulletin>
-                  <div className='line-1'></div>
-                  <div className='line-2'></div>
-                  <div className='drawing-pin'></div>
-                  <div className='board-1'>
-                      <img className='wood' src={wood} alt=""/>
-                  </div>
-                  <div className='board-2'></div>
-                  <div className='text'></div>
-                  <div className='button'></div>
-                </Bulletin>
-            </StyledSection2Container>
-            {/* Index-Content Section2 End */}
-
-            {/* Index-Content Section3 Start */}
-            <StyledSection3Container>
-                <div className='pre-button'></div>
-
-                <WoodBookShelf>
-                  <div className="pic-container-1">
-                      <img className="pic-top" src={wood} alt=""/>
-                  </div>
-                  <div className="pic-container-2">
-                      <img className="pic-bottom" src={wood} alt=""/>
-                  </div>
-                </WoodBookShelf>
-
-                <div className='next-button'></div>
-            </StyledSection3Container>
-            {/* Index-Content Section3 End */}
-        </StyledAppContainer>
-    );
-}
-
-export default Index;
+import LinkStyle from "../../Common/LinkStyle";
 
 // Section1 Start \\
 const StyledAppContainer=styled.div`
     display: block;
+    height: 100vw;
 `
 
 const StyledSection1Container=styled.section`
-  width: 100%;
+  width: 80%;
   .info .para{
-    width: 60%;
+    width: 70%;
     position: absolute;
-    bottom: 0;
-    left:50%;
+    bottom: -120px;
+    left:45%;
     background-color: transparent;
+    p{
+      background-color: transparent;
+    }
+  }
+  @media (min-width: 769px) {
+    width: 90%;
+    margin: 5%;
+    .info .para{
+      width: 65%;
+      position: absolute;
+      bottom: -120px;
+      left:45%;
+      background-color: transparent;
+    }
   }
 `
 const StyledAppImgContainer=styled.div`
@@ -108,7 +69,7 @@ const StyledAppImgContainer=styled.div`
 
 // Section2 Start \\
 const StyledSection2Container=styled.section`
-  margin: 35% 0% 5% 0%;
+  /* padding: 35% 0% 5% 0%; */
 `
 const Bulletin=styled.div`
   .line-1{
@@ -171,15 +132,30 @@ const Bulletin=styled.div`
       border-radius: 10px;
   }
 
+  .text{
+    position: absolute ;
+    top:5%;
+    left: 5%;
+    right: 5%;
+    bottom:5%;
+    background-color: transparent;
+    font-size:30px;
+  }
+  .text span{
+    background-color: transparent;
+    font-size: 40px;
+    font-weight: bold;
+  }
 `
 // Section2 End \\
 
 // Section3 Start \\
 const StyledSection3Container=styled.section`
+  height: 100vw;
   display: flex;
   flex-direction:row;
   flex-wrap: nowrap;
-  margin: 30% 0%;
+  /* padding: 30% 0%; */
   .pre-button{
     width: 0;
     height: 0;
@@ -246,3 +222,133 @@ const WoodBookShelf=styled.div`
 
 `
 // Section3 End \\
+
+// Animation-Section2 Start \\
+var t1=gsap.timeline({onUpdate:updatePercentage});
+t1.from('.bulletin',{duration:1,opacity:0});
+t1.from('.text',{duration:.5,opacity:0,ease:"elastic(1, 0.5)"});
+t1.from('.drawing-pin',{duration:.5,scale:2,opacity:0,ease:"elastic(1, 0.5)"});
+function updatePercentage() {
+  t1.progress();
+}
+// Animation-Section2 Start \\
+
+// Animation-Section3 Start \\
+var t2=gsap.timeline();
+t2.from('.pic-container',{duration:1,opacity:0});
+// Animation-Section3 End \\
+
+// ScrollMagic \\
+ScrollMagicPluginIndicator(ScrollMagic);
+// ScrollMagicPluginGsap(ScrollMagic);
+var controller=new ScrollMagic.Controller();
+var scene=new ScrollMagic.Scene({
+  triggerElement:".section2",
+  triggerHook:"onLeave",
+  duration:100,
+  reverse:true
+})
+.setTween(t1)
+.addTo(controller);
+
+var scene2=new ScrollMagic.Scene({
+  triggerElement:".section3",
+  triggerHook:"onLeave",
+  duration:"100%",
+  reverse:true
+})
+.setPin(".section3")
+.setTween(t2)
+.addTo(controller);
+// ScrollMagic \\
+
+
+const Index=()=>{
+    return(
+        <StyledAppContainer>
+          {/*Index-Content Section1 Start  */}
+          <section className="section1" style={{height: "100vw"}}>
+            <StyledSection1Container>
+                <StyledAppImgContainer>
+                    <img src={indexPage} alt=""/>
+                </StyledAppImgContainer>
+                <div className='info'>
+                <h2 className='para'>
+                  <p>台北國際書展絕對堪稱是最具活力、最具多元特色和國際風味的國際書展。</p>
+                從另一個角度來看，一年一度的台北國際書展正是台灣出版市場的縮影，反映了此刻華文出版市場的變化與挑戰。就市場規模而言，台灣當然是「小」的，但，小反而具彈性，目標的設定和完成 能夠更為精準──台北國際書展的活力，正是此一事實的明證。<br/>
+台北國際書展展現的活力，得自於台灣出版人的參與與經營，我們共同締造了此一亮麗成果。台北國際書展將透過更豐富的內容，彰顯台灣出版界 的魅力與實力：對外，具現台灣為華文出版樞紐的策略地位，以吸引期望開拓華文市場的全球出版人參與；對內，多層次的鋪陳台灣出版風貌，從文學／非文學、童 書、動漫等類型，到文字、圖像、聲音等形式，蒐羅紙本到數位等載體，持續打造最具文化視野的形象與口碑。
+                </h2>
+                </div>
+            </StyledSection1Container>
+          </section>
+            {/* Index-Content Section1 End */}
+
+            {/* Index-Content Section2 Start */}
+            <section className="section2" style={{height: "100vw"}}>
+              <StyledSection2Container>
+                  <Bulletin>
+                    <div className='bulletin line-1'></div>
+                    <div className='bulletin line-2'></div>
+                    <div className='drawing-pin'></div>
+                    <div className='bulletin board-1'>
+                        <img className='wood' src={wood} alt=""/>
+                    </div>
+                    <div className='bulletin board-2'></div>
+                    <div className='text'>
+                      <span>最新消息</span>
+                      -------------------------------------------------------------
+                      <br/>
+                      1.
+                      <LinkStyle to="#!">
+                      2022年11月16日<br/>
+                      2023台北國際書展「城市在閱讀」活動開放線上報名
+                      </LinkStyle>
+                      -------------------------------------------------------------
+                      <br/>
+                      2.
+                      <LinkStyle to="#!">
+                      2022年11月15日<br/>
+                      「2023金蝶獎-台灣出版設計大獎」13本入圍名單出爐 選紙、文字 單純設計搶眼
+                      </LinkStyle>
+                      -------------------------------------------------------------
+                      <br/>
+                      3.
+                      <LinkStyle to="#!">
+                      2022年11月03日<br/>
+                      超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展 中、英文紀錄片　Youtube上線！
+                      </LinkStyle>
+                      -------------------------------------------------------------
+                      
+                    </div>
+                    <div className='button'></div>
+                  </Bulletin>
+              </StyledSection2Container>
+            </section>
+            {/* Index-Content Section2 End */}
+
+            {/* Index-Content Section3 Start */}
+            <section className="section3" style={{height: "100vw"}}>
+              <StyledSection3Container>
+                  <div className='pre-button'></div>
+
+                  <WoodBookShelf>
+                    <div className="pic-container pic-container-1">
+                        <img className="pic-top" src={wood} alt=""/>
+                    </div>
+                    <div className="pic-container pic-container-2">
+                        <img className="pic-bottom" src={wood} alt="" />
+                    </div>
+                  </WoodBookShelf>
+
+                  <div className='next-button'></div>
+              </StyledSection3Container>
+            </section>
+            {/* Index-Content Section3 End */}
+        </StyledAppContainer>
+    );
+}
+
+export default Index;
+
+
+
