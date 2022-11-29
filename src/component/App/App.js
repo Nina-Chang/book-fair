@@ -7,6 +7,7 @@ import Trasport from '../Pages/Transport-info';
 import TicketInfo from '../Pages/Ticket-info';
 import Archives from '../Pages/Archives';
 import ContactUs from '../Pages/Contact-us';
+import 'antd/dist/reset.css';
 
 const App=()=>{
     return(
