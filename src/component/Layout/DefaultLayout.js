@@ -11,9 +11,11 @@ function Layout(){
       <header className="App-header">
         <StyledAppContainer>
           <Title/>
+          <ClearfixTitle/>
           {/* Content */}
           <Outlet/>
           {/* Content */}
+          <ClearfixTicket/>
           <Ticket/>
         </StyledAppContainer>
       </header>
@@ -29,4 +31,10 @@ const StyledAppContainer=styled.div`
   flex-direction: row;
   justify-content: space-between;
 `
+const ClearfixTitle=styled.div`
+  width: 150px;
+`
 
+const ClearfixTicket=styled.div`
+  width: 250px;
+`

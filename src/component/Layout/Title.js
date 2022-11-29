@@ -30,6 +30,8 @@ export default Title;
 
 // Layout Title Start \\
 const StyledAppTitle = styled.div`
+  position: fixed;
+  z-index: 1;
   img {
     transform: rotate(-90deg) scale(0.75);
   }
@@ -54,9 +56,9 @@ const StyledAppTitle = styled.div`
     .title_text {
       writing-mode: vertical-lr;
       display: block;
-      position: relative;
-      top: -1%;
-      left: 12%;
+      position: fixed;
+      top: 18%;
+      left: 2%;
       font-size: 5rem;
       font-weight: 800;
     }
