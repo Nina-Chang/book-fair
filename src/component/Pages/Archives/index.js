@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import archive2 from '../../../image/archive1.webp'
+import archive1 from '../../../image/archive2.webp'
+import LinkStyle from "../../Common/LinkStyle";
+import BackofBook from "../../../image/Book-background.png"
 
 const Archives=()=>{
     return(
@@ -17,8 +21,19 @@ const Archives=()=>{
 
                 {/* Content Start */}
                 <StyledAppContent>
-                    <div className="para-1">1.</div>
-                    <div className="para-2">2.</div>
+                    <div className="para-1">
+                        <LinkHover to="#!">
+                            <img src={archive1} width={350} alt=""/>
+                            <span>2023 台北國際書展</span>
+                        </LinkHover>
+                    </div>
+                    <div className="para-2">
+                        <LinkHover to="#!">
+                            <img src={archive2} width={350} alt=""/>
+                            <span>2022 台北國際書展</span>
+                        </LinkHover>
+                    </div>
+                    <img className="BackofBook" src={BackofBook} width={300} alt="" />
                 </StyledAppContent>
                 {/* Content End */}
             </div>
@@ -58,7 +73,7 @@ const StyledAppBookshelf=styled.ul`
         box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 1);
     }
     & li:nth-child(2){
-        width: 80%;
+        width: 70%;
         height: 20px;
         background-color: #737046;
         margin-top: 56%;
@@ -70,6 +85,26 @@ const StyledAppBookshelf=styled.ul`
 const StyledAppContent=styled.div`
     position: absolute;
     top:0;
-    left: 25%;
+    left: 20%;
     font-size: 38px;
+    background-color: transparent;
+    span{
+        background-color: transparent;
+        font-weight: 600;
+        margin-left: 16px;
+    }
+    .para-1{
+        margin-bottom: 30px;
+    }
+    .BackofBook{
+        margin-top: 13px;
+        margin-left: 60%;
+        box-shadow: 0px 20px 10px -20px #000;
+    }
+`
+
+const LinkHover=styled(LinkStyle)`
+    &:hover img{
+        transform: scale(1.1);
+    }
 `
