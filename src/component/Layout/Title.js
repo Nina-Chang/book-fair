@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ribbon from "../../image/ribbon-sm-1.png";
+import Ticket from './Ticket';
 
 const Title = () => {
+  const {setIsClick1}=Ticket();
+  const {setIsClick2}=Ticket();
+  const {setIsClick3}=Ticket();
+  const {setIsClick4}=Ticket();
+  const {setIsClick5}=Ticket();
   return (
     // Title Start
     <StyledAppTitle>
@@ -17,6 +23,13 @@ const Title = () => {
             backgroundColor: "white",
             padding: "15px 10px",
           }}
+          onClick={(()=>{
+            setIsClick1(false);
+            setIsClick2(false);
+            setIsClick3(false);
+            setIsClick4(false);
+            setIsClick5(false);
+          })}
         >
           台北國際書展
         </Link>
@@ -30,28 +43,54 @@ export default Title;
 
 // Layout Title Start \\
 const StyledAppTitle = styled.div`
-  position: fixed;
-  z-index: 1;
+  
   img {
-    transform: rotate(-90deg) scale(0.75);
+    transform: rotate(-90deg) scale(0.35);
+    position: fixed;
+    top:-5%;
+    left:-10%;
+    z-index: 1;
   }
   .title_text {
     writing-mode: horizontal-tb;
     display: block;
     position: fixed;
     top: 2.5%;
-    left: 12%;
-    font-size: 3rem;
+    left: 10%;
+    font-size: 35px;
     font-weight: 800;
     z-index: 1;
   }
-  @media (min-width: 769px) {
+  @media (min-width: 576px ){
+    //比手機大
+    /* position: fixed;
+    z-index: 1; */
+    img {
+      transform: rotate(-90deg) scale(0.5);
+      top:-5%;
+      left:-5%;
+    }
+    .title_text {
+      writing-mode: horizontal-tb;
+      display: block;
+      position: fixed;
+      top: 2%;
+      left: 10%;
+      font-size: 3.5rem;
+      font-weight: 800;
+      z-index: 1;
+    }
+    
+  }
+  @media (min-width: 769px){
     //比平板大
     /* position:fixed ;
-        z-index: 99;
-        background-color: transparent; */
+    z-index: 99;
+    background-color: transparent; */
     img {
-      transform: rotate(0deg);
+      transform: rotate(0deg) scale(0.8);
+      top: 1%;
+      left: -1%;
     }
     .title_text {
       writing-mode: vertical-lr;
@@ -63,5 +102,5 @@ const StyledAppTitle = styled.div`
       font-weight: 800;
     }
   }
-`;
+  `;
 // Layout Title End \\

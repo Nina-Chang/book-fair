@@ -27,14 +27,25 @@ export default Layout;
 
 
 const StyledAppContainer=styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  @media (min-width: 576px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 const ClearfixTitle=styled.div`
-  width: 150px;
-`
+  @media (min-width: 576px) {
+    width: 10px;
+  }
+  width: 0px;
+  `
 
 const ClearfixTicket=styled.div`
-  width: 250px;
+  @media (min-width: 576px) {
+    width: 200px;
+  }
+  width: 0px;
 `
