@@ -1,0 +1,22 @@
+diff --git a/node_modules/antd/es/carousel/style/index.js b/node_modules/antd/es/carousel/style/index.js
+index 8ba6e8e..aa1b957 100644
+--- a/node_modules/antd/es/carousel/style/index.js
++++ b/node_modules/antd/es/carousel/style/index.js
+@@ -9,7 +9,7 @@ var genCarouselStyle = function genCarouselStyle(token) {
+     carouselArrowSize = token.carouselArrowSize,
+     carouselDotOffset = token.carouselDotOffset,
+     marginXXS = token.marginXXS;
+-  var arrowOffset = -carouselArrowSize * 1.25;
++  var arrowOffset = -carouselArrowSize * 3;
+   var carouselDotMargin = marginXXS;
+   return _defineProperty({}, componentCls, _extends(_extends({}, resetComponent(token)), {
+     '.slick-slider': {
+@@ -96,7 +96,7 @@ var genCarouselStyle = function genCarouselStyle(token) {
+       fontSize: 0,
+       lineHeight: 0,
+       background: 'transparent',
+-      border: 0,
++
+       outline: 'none',
+       cursor: 'pointer',
+       '&:hover, &:focus': {
