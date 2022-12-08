@@ -7,6 +7,9 @@ const LinkStyle = styled(Link)`
   color: inherit;
   text-decoration: none;
   background-color: transparent;
+  &:hover{
+    color: black;
+  }
 `;
 
 export default LinkStyle;
