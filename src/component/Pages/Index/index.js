@@ -13,7 +13,6 @@ import Book5 from "../../../image/Book-5.jpg";
 import LinkStyle from "../../Common/LinkStyle";
 import { Carousel } from "antd";
 import { Link } from "react-router-dom";
-// import 'https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap';
 
 // Section1 Start \\
 const StyledAppContainer = styled.div`
@@ -35,43 +34,36 @@ const StyledSection1Container = styled.section`
     font-size: 18px;
   }
   .info .para {
-    /* font-weight: 500; */
-    /* position: absolute;
-    bottom: 0;
-    left: 0%; */
     background-color: transparent;
     p {
       background-color: transparent;
     }
   }
   @media (min-width: 576px) {
-    width: 90%;
-    margin: 5%;
-    .info .para {
-      font-size: 60px;
-      width: 65%;
-      position: absolute;
-      bottom: 50px;
-      left: 45%;
-      background-color: transparent;
+    .info{
+      left:50%;
+      width: 70%;
+      font-size: 20px;
     }
+
   }
   @media (min-width: 769px) {
-    width: 90%;
-    margin: 5%;
-    .info .para {
-      font-size: 60px;
+    .info{
+      left: 47%;
       width: 65%;
-      position: absolute;
-      bottom: 50px;
-      left: 45%;
-      background-color: transparent;
+      font-size: 22px;
+    }
+  }
+  @media (min-width: 996px) {
+    .info{
+      left: 47%;
+      width: 65%;
+      font-size: 30px;
     }
   }
 `;
 const StyledAppImgContainer = styled.div`
   width:100%;
-  border-radius: 2px;
   margin:0% 10%;
   box-shadow: -14px 10px 4px rgba(115, 112, 70, 1);
   &:before {
@@ -87,58 +79,21 @@ const StyledAppImgContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    /* object-fit: contain; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
   @media (min-width: 576px) {
-    width: 100%;
-    border-radius: 2px;
-    /* overflow: hidden; */
-    margin-top: 15%;
-    box-shadow: -14px 10px 4px rgba(115, 112, 70, 1);
-    /* border: 1px solid #000; */
-    &:before {
-      content: "";
-      display: block;
-      width: 100%;
-      padding-top: 75%;
-    }
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    width:100%;
+    margin: 0 0% 0 10%;
   }
   @media (min-width: 769px) {
     width: 100%;
-    border-radius: 2px;
-    /* overflow: hidden; */
-    margin-top: 15%;
-    box-shadow: -14px 10px 4px rgba(115, 112, 70, 1);
-    /* border: 1px solid #000; */
-    &:before {
-      content: "";
-      display: block;
-      width: 100%;
-      padding-top: 75%;
-    }
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    margin: 0% 0% 0 10%;
+  }
+  @media (min-width: 996px) {
+    width: 100%;
+    margin: 0% 0% 0 0%;
   }
 `;
 // Section1 End \\
@@ -163,7 +118,7 @@ const Bulletin = styled.div`
   }
   .drawing-pin {
     position: absolute;
-    top: -8%;
+    top: -5%;
     left: 0;
     background-color: rgb(175, 171, 171);
     width: 30px;
@@ -174,7 +129,7 @@ const Bulletin = styled.div`
   }
 
   .board-1 {
-    width: 800px;
+    /* width: 550px; */
     position: relative;
   }
 
@@ -182,7 +137,7 @@ const Bulletin = styled.div`
     content: "";
     display: block;
     width: 100%;
-    padding-top: 80%;
+    padding-top: 150%;
     position: relative;
   }
 
@@ -215,11 +170,11 @@ const Bulletin = styled.div`
     right: 5%;
     bottom: 5%;
     background-color: transparent;
-    font-size: 30px;
+    font-size: 28px;
   }
   .text span {
     background-color: transparent;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
     color: #000;
   }
@@ -228,116 +183,94 @@ const Bulletin = styled.div`
     font-weight: 550;
     color: #737046;
   }
+  .text sub{
+    background-color: transparent;
+    &:nth-of-type(1){
+      display: block;
+    }
+    &:nth-of-type(2){
+      display: block;
+    }
+    &:nth-of-type(3){
+      display: none;
+    }
+  }
+  ${LinkStyle}{
+    &:nth-of-type(3){
+      display: block;
+    }
+    &:nth-of-type(4){
+      display: none;
+    }
+  }
   @media (min-width: 576px) {
-    .line-1 {
-      width: 50%;
-      height: 3px;
-      transform: skewY(-10deg);
-      background-color: black;
-    }
-    .line-2 {
-      width: 50%;
-      height: 3px;
-      transform: skewY(10deg);
-      background-color: black;
-      margin-left: 50%;
-    }
     .drawing-pin {
-      position: absolute;
-      top: -8%;
-      left: 0;
-      background-color: rgb(175, 171, 171);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      margin: 0% 0% 5% 47%;
-      margin-bottom: 5%;
+      top: -6%;
     }
 
     .board-1 {
-      width: 800px;
+      width: 415px;
       position: relative;
     }
 
     .board-1::before {
       content: "";
       display: block;
-      width: 100%;
-      padding-top: 80%;
+      width:100%;
+      padding-top: 130%;
       position: relative;
     }
 
-    .board-1 .wood {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 10px;
-    }
-
-    .board-2 {
-      position: absolute;
-      top: 4.5%;
-      left: 3%;
-      width: 94%;
-      height: 92%;
-      background-color: rgb(204, 192, 184);
-      border-radius: 10px;
-    }
-
     .text {
-      opacity: 0;
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      right: 5%;
-      bottom: 5%;
-      background-color: transparent;
-      font-size: 30px;
+      top: 3%;
     }
     .text span {
-      background-color: transparent;
-      font-size: 40px;
-      font-weight: bold;
-      color: #000;
+      font-size: 32px;
     }
-    .text div {
+    .text sub{
       background-color: transparent;
-      font-weight: 550;
-      color: #737046;
+      &:nth-of-type(2){
+        display: block;
+      }
+      &:nth-of-type(3){
+        display: none;
+      }
+    }
+    ${LinkStyle}{
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: none;
+      }
     }
   }
   @media (min-width: 769px) {
-    .line-1 {
-    width: 50%;
-      height: 3px;
-      transform: skewY(-10deg);
-      background-color: black;
+    .text sub{
+      background-color: transparent;
+      &:nth-of-type(2){
+        display: block;
+      }
+      &:nth-of-type(3){
+        display: none;
+      }
     }
-    .line-2 {
-      width: 50%;
-      height: 3px;
-      transform: skewY(10deg);
-      background-color: black;
-      margin-left: 50%;
+    ${LinkStyle}{
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: none;
+      }
     }
+  }
+  @media (min-width: 996px) {
     .drawing-pin {
-      position: absolute;
-      top: -8%;
-      left: 0;
-      background-color: rgb(175, 171, 171);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      margin: 0% 0% 5% 47%;
-      margin-bottom: 5%;
+      top: -5%;
     }
 
     .board-1 {
-      width: 800px;
+      width: 600px;
       position: relative;
     }
 
@@ -345,51 +278,33 @@ const Bulletin = styled.div`
       content: "";
       display: block;
       width: 100%;
-      padding-top: 80%;
+      padding-top: 115%;
       position: relative;
     }
 
-    .board-1 .wood {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 10px;
-    }
-
-    .board-2 {
-      position: absolute;
-      top: 4.5%;
-      left: 3%;
-      width: 94%;
-      height: 92%;
-      background-color: rgb(204, 192, 184);
-      border-radius: 10px;
-    }
-
     .text {
-      opacity: 0;
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      right: 5%;
-      bottom: 5%;
-      background-color: transparent;
+      top: 4%;
       font-size: 30px;
     }
     .text span {
-      background-color: transparent;
       font-size: 40px;
-      font-weight: bold;
-      color: #000;
     }
-    .text div {
+    .text sub{
       background-color: transparent;
-      font-weight: 550;
-      color: #737046;
+      &:nth-of-type(2){
+        display: block;
+      }
+      &:nth-of-type(3){
+        display: block;
+      }
+    }
+    ${LinkStyle}{
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: block;
+      }
     }
   }
 `;
@@ -398,30 +313,71 @@ const Bulletin = styled.div`
 // Section3 Start \\
 const StyledSection3Container = styled.section`
   height: 100vh;
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: nowrap; */
-  padding: 15% 0%;
+  padding: 15% 0% 5% 0;
   .title{
     color: white;
     background-color: #818B8C;
-    line-height: 100px;
+    line-height: 50px;
     padding-left: 20px;
+    padding-right: 20px;
+    margin-top:15%;
     margin-bottom:5%;
     width: 30%;
-    font-size: 50px;
+    font-size: 30px;
   }
   .Carousel {
     position: absolute;
-    top: -27px;
+    top: 10px;
     left: 50%;
     z-index: 1;
     background-color: transparent;
     transform: translateX(-50%);
+    img{
+      width: 100%;
+    }
+  }
+  @media (min-width:576px){
+    padding: 15% 0%;
+    .title{
+      line-height: 60px;
+      width: 48%;
+      font-size: 38px;
+    }
+    .Carousel {
+      top: 7px;
+    }
+  }
+  @media (min-width:796px){
+    padding: 0% 0%;
+    .Carousel {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      z-index: 1;
+      background-color: transparent;
+      transform: translateX(-50%);
+    }
+  }
+  @media (min-width:996px){
+    padding: 0% 0%;
+    .title{
+      line-height: 70px;
+      width: 38%;
+      font-size: 45px;
+    }
+    .Carousel {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      z-index: 1;
+      background-color: transparent;
+      transform: translateX(-50%);
+    }
   }
 `;
 const WoodBookShelf = styled.div`
   width: 100%;
+  margin: 25% 0 10% 0;
   .pic-container-1 {
     width: 95%;
     position: relative;
@@ -468,23 +424,55 @@ const WoodBookShelf = styled.div`
     box-shadow: 0px 20px 120px 0px rgba(0, 0, 0, 1),
       0px -5px 200px -10px rgba(0, 0, 0, 1);
   }
+  @media (min-width: 576px){
+    width: 96%;
+    margin: 30% 0 0 2%;
+    .pic-container-1 {
+      width: 94%;
+      position: relative;
+      margin-left: 3%;
+    }
+  }
+  @media (min-width:769px) {
+    width: 100%;
+    margin: 50% 0 0 2%;
+  }
+  @media (min-width:996px) {
+    width: 100%;
+    margin: 40% 0 0 2%;
+  }
 `;
 const PreButton=styled.div`
   width: 0;
   height: 0;
   margin-top: 15%;
   border-style: solid;
-  border-width: 50px 50px 50px 0;
+  border-width: 20px 20px 20px 0;
   border-color: transparent #818b8c transparent transparent;
+  @media (min-width: 576px) {
+    width: 0;
+    height: 0;
+    margin-top: 15%;
+    border-style: solid;
+    border-width: 30px 30px 30px 0;
+    border-color: transparent #818b8c transparent transparent;
+  }
 `
 const NextButton=styled.div`
   width: 0;
   height: 0;
   margin-top: 15%;
   border-style: solid;
-  border-width: 50px 0 50px 50px;
+  border-width: 20px 0 20px 20px;
   border-color: transparent transparent transparent #818b8c;
-
+  @media (min-width: 576px) {
+    width: 0;
+    height: 0;
+    margin-top: 15%;
+    border-style: solid;
+    border-width: 30px 0 30px 30px;
+    border-color: transparent transparent transparent #818b8c;
+  }
 `
 // Section3 End \\
 
@@ -521,7 +509,6 @@ const Section2 = () => {
             <img className="wood" src={wood} alt="" />
           </div>
           <div className="board-2"></div>
-          {/* <div className='text'></div> */}
           <div className="button"></div>
         </Bulletin>
       </StyledSection2Container>
@@ -548,19 +535,19 @@ const Section3 = () => {
             dots={false}
           >
             <Link to="#!">
-              <img src={Book1} width={250} alt="" />
+              <img src={Book1} alt="" />
             </Link>
             <Link to="#!">
-              <img src={Book2} width={250} alt="" />
+              <img src={Book2} alt="" />
             </Link>
             <Link to="#!">
-              <img src={Book3} width={250} alt="" />
+              <img src={Book3}alt="" />
             </Link>
             <Link to="#!">
-              <img src={Book4} width={250} alt="" />
+              <img src={Book4} alt="" />
             </Link>
             <Link to="#!">
-              <img src={Book5} width={250} alt="" />
+              <img src={Book5} alt="" />
             </Link>
           </Carousel>
           <div className="pic-container pic-container-1">
@@ -602,14 +589,13 @@ const Index = () => {
               >
                 <div className="text">
                   <span>最新消息</span>
-                  ----------------------------------------------
                   <br />
                   <LinkStyle to="#!">
                     <div>2022年11月16日</div>
                     2023台北國際書展「城市在閱讀」活動開放線上報名
                   </LinkStyle>
                   <br />
-                  ------------------------------------------------------------
+                  <sub>------------------------------------------------------------</sub>
                   <br />
                   <LinkStyle to="#!">
                     <div>2022年11月15日</div>
@@ -617,15 +603,15 @@ const Index = () => {
                     單純設計搶眼
                   </LinkStyle>
                   <br />
-                  ------------------------------------------------------------
+                  <sub>------------------------------------------------------------</sub>
                   <br />
                   <LinkStyle to="#!">
                     <div>2022年11月03日</div>
                     超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展
                     中、英文紀錄片　Youtube上線！
                   </LinkStyle>
-                  <br />
-                  ------------------------------------------------------------
+                  {/* <br /> */}
+                  <sub>------------------------------------------------------------</sub>
                   <br />
                   <LinkStyle to="#!">
                     <div>2022年11月01日</div>
