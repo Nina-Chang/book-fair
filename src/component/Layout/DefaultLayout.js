@@ -27,18 +27,26 @@ export default Layout;
 
 
 const StyledAppContainer=styled.div`
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
   @media (min-width: 576px) {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
+  /* @media (min-width: 996px) {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+  } */
 `
 const ClearfixTitle=styled.div`
   @media (min-width: 576px) {
     width: 10px;
+  }
+  @media (min-width: 769px) {
+    width: 110px;
+  }
+  @media (min-width: 996px) {
+    width: 0px;
   }
   width: 0px;
   `
@@ -46,6 +54,12 @@ const ClearfixTitle=styled.div`
 const ClearfixTicket=styled.div`
   @media (min-width: 576px) {
     width: 200px;
+  }
+  @media (min-width: 769px) {
+    width: 170px;
+  }
+  @media (min-width: 996px) {
+    width: 150px;
   }
   width: 0px;
 `

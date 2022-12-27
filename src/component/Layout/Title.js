@@ -88,9 +88,9 @@ const StyledAppTitle = styled.div`
     z-index: 99;
     background-color: transparent; */
     img {
-      transform: rotate(0deg) scale(0.8);
-      top: 1%;
-      left: -1%;
+      transform: rotate(0deg) scale(0.7);
+      top: 2%;
+      left: -2%;
     }
     .title_text {
       writing-mode: vertical-lr;
@@ -100,6 +100,11 @@ const StyledAppTitle = styled.div`
       left: 2%;
       font-size: 5rem;
       font-weight: 800;
+    }
+  }
+  @media (min-width: 996px){
+    img {
+      left: 0%;
     }
   }
   `;
