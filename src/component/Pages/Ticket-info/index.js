@@ -2,44 +2,65 @@ import React from "react";
 import styled from "styled-components";
 import ticket from '../../../image/ticket-yellow-removebg.png'
 
+const Clearfix=styled.div`
+    height: 100px;
+`
+
 const StyledAppContainer=styled.div`
     display: block;
-    width: 55%;
-    margin-left:20%;
+    width: 85%;
     .title{
         color: white;
         background-color: #818B8C;
         line-height: 60px;
         padding:0px 10px;
-        margin: 42% 10% 0 -25%;
+        margin: 0% 10% 0 10%;
         width: fit-content;
         font-size: 30px;
     }
     @media (min-width: 576px) {
-        width: 55%;
-        margin-left:0%;
+        width: 90%;
         .title{
             line-height: 90px;
             padding:0px 20px;
-            margin: 30% 10% 0 0 ;
+            margin: 0% 0% 0 10%;
             font-size: 45px;
         }
     }
-    @media (min-width: 796px) {
-        width: 60%;
+    @media (min-width: 769px) {
+        /* width: 90%; */
         .title{
             line-height: 100px;
-            padding: 0px 20px;
-            margin:0 0 0 16%;
             font-size: 50px;
         }
+        ${Clearfix}{
+            display: none;
+        }
+    }
+    @media (min-width: 996px) {
+        width: 76%;
     }
 `
+const StyledAppPicContainer=styled.div`
+    width:96%;
+    margin-left:10%;
+    @media (min-width: 576px) {
+        width:85%;
+    }
+    @media (min-width: 769px) {
+        width:84%;
+        margin-top: 4%;
+        margin-left:5%;
+    }
+    @media (min-width: 996px) {
+        width: 78%;
+        margin-top: 0%;
+    }
 
+`
 const StyledAppBookshelf=styled.ul`
     display: flex;
     list-style: none;
-    left:-30%;
     & li:nth-child(1){
         width: 20%;
         height: 20px;
@@ -58,20 +79,18 @@ const StyledAppBookshelf=styled.ul`
         display: none;
     }
     @media (min-width:576px) {
-        left:0%;
         & li:nth-child(1){
-            margin-top: 112%;
+            margin-top: 102%;
             margin-left: -10%;
             display: block;
         }
         & li:nth-child(2){
             width: 90%;
-            margin-top: 120%;
+            margin-top: 110%;
             display: block;
         }
     }
     @media (min-width:769px) {
-        left:0%;
         & li:nth-child(1){
             margin-top: 91.5%;
             margin-left: 0%;
@@ -85,15 +104,14 @@ const StyledAppBookshelf=styled.ul`
         }
     }
     @media (min-width:996px) {
-        left:0%;
         & li:nth-child(1){
-            margin-top: 68%;
+            margin-top: 69%;
             margin-left: 0%;
             display: block;
         }
         & li:nth-child(2){
             width: 70%;
-            margin-top: 76%;
+            margin-top: 77%;
             display: block;
         }
     }
@@ -102,7 +120,6 @@ const StyledAppBookshelf=styled.ul`
 const StyledAppContent=styled.div`
     position: absolute;
     top:0;
-    left: -26%;
     font-size: 30px;
     img{
         width:100%;
@@ -228,12 +245,13 @@ const StyledTicketText=styled.div`
 const TicketInfo=()=>{
     return(
         <StyledAppContainer>
+            <Clearfix/>
             {/* Title Start */}
             <div className="title">購票資訊</div>
             {/* Title End */}
 
             {/* Picture Start */}
-            <div className="pic-container">
+            <StyledAppPicContainer>
                 <StyledAppBookshelf>
                     <li></li>
                     <li></li>
@@ -270,7 +288,7 @@ const TicketInfo=()=>{
                     </div>
                 </StyledAppContent>
                 {/* Content End */}
-            </div>
+            </StyledAppPicContainer>
             {/* Picture End */}
         </StyledAppContainer>
     )
