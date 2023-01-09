@@ -4,10 +4,7 @@ import archive2 from '../../../image/archive1.webp'
 import archive1 from '../../../image/archive2.webp'
 import LinkStyle from "../../Common/LinkStyle";
 import BackofBook from "../../../image/Book-background.png"
-
-const Clearfix=styled.div`
-    height: 100px;
-`
+import ClearfixTitle from "../../Common/ClearfixTitle";
 
 const StyledAppContainer=styled.div`
     display: block;
@@ -35,7 +32,7 @@ const StyledAppContainer=styled.div`
             line-height: 100px;
             font-size: 50px;
         }
-        ${Clearfix}{
+        ${ClearfixTitle}{
             display: none;
         }
     }
@@ -250,7 +247,7 @@ const LinkHover=styled(LinkStyle)`
 const Archives=()=>{
     return(
         <StyledAppContainer>
-            <Clearfix/>
+            <ClearfixTitle/>
             {/* Title Start */}
             <div className="title">檔案</div>
             {/* Title End */}

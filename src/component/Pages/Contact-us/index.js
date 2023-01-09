@@ -6,10 +6,7 @@ import IG from '../../../image/IG-1-removebg.png'
 import twitter from '../../../image/twitter.png'
 import youtube from '../../../image/Youtube.png'
 import facebook from '../../../image/facebook-logo.png'
-
-const Clearfix=styled.div`
-    height: 100px;
-`
+import ClearfixTitle from "../../Common/ClearfixTitle";
 
 const StyledAppContainer=styled.div`
     display: block;
@@ -47,7 +44,7 @@ const StyledAppContainer=styled.div`
             line-height: 100px;
             font-size: 50px;
         }
-        ${Clearfix}{
+        ${ClearfixTitle}{
             display: none;
         }
     }
@@ -146,7 +143,7 @@ const ContactLink=styled.a`
 const ContactUs=()=>{
     return(
         <StyledAppContainer>
-            <Clearfix/>
+            <ClearfixTitle/>
             {/* Title Start */}
             <div className="title">聯絡我們</div>
             {/* Title End */}

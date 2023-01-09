@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ticket from '../../../image/ticket-yellow-removebg.png'
-
-const Clearfix=styled.div`
-    height: 100px;
-`
+import ClearfixTitle from "../../Common/ClearfixTitle";
 
 const StyledAppContainer=styled.div`
     display: block;
@@ -28,12 +25,11 @@ const StyledAppContainer=styled.div`
         }
     }
     @media (min-width: 769px) {
-        /* width: 90%; */
         .title{
             line-height: 100px;
             font-size: 50px;
         }
-        ${Clearfix}{
+        ${ClearfixTitle}{
             display: none;
         }
     }
@@ -245,7 +241,7 @@ const StyledTicketText=styled.div`
 const TicketInfo=()=>{
     return(
         <StyledAppContainer>
-            <Clearfix/>
+            <ClearfixTitle/>
             {/* Title Start */}
             <div className="title">購票資訊</div>
             {/* Title End */}
@@ -267,7 +263,6 @@ const TicketInfo=()=>{
                             <span>09.01-11.30</span><br/>
                             <span>台北世界貿易中心展覽一館</span>
                             <br/>
-                            
                             <span>NT$280</span>
                             <span>/單人單次入場券</span>
                         </StyledTicketText>
@@ -277,7 +272,6 @@ const TicketInfo=()=>{
                         <div className="ticket-title-2">雙人套票</div>
                         <img src={ticket} alt="" />
                         <StyledTicketText>
-                            
                             <span>台北國際書展</span><br/>
                             <span>09.01-11.30</span><br/>
                             <span>台北世界貿易中心展覽一館</span>

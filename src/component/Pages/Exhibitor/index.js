@@ -1,27 +1,28 @@
 import {  Col, Row } from "antd";
 import React from "react";
 import styled from "styled-components";
+import ClearfixTitle from "../../Common/ClearfixTitle";
+import ClearfixBottom from "../../Common/ClearfixBottom";
 
 const StyledAppContainer=styled.div`
     height: 100vh;
     display: block;
-    width: 70%;
+    width: 85%;
     .title{
         line-height: 60px;
         padding: 0px 10px;
-        margin: 34% 10% 0 10%;
+        margin: 0% 10% 0 10%;
         width: fit-content;
         font-size: 30px;
         color: white;
         background-color: #737046;
     }
-
     .content{
         border-radius: 30px;
         overflow: hidden;
-        width: 96%;
+        width: 90%;
         top:0%;
-        left: 25%;
+        left: 15%;
         background-color: white;
         box-shadow: -5px 5px 40px -15px rgba(0, 0, 0, 1);
         .ExhName{
@@ -31,65 +32,38 @@ const StyledAppContainer=styled.div`
         }
     }
     @media (min-width: 576px) {
+        width: 90%;
         .title{
             line-height: 90px;
-            padding: 0px 20px;
-            margin: 27% 0% 0 10%;
-            width: fit-content;
+            padding:0px 20px;
+            margin: 0% 0% 0 10%;
             font-size: 45px;
-            color: white;
-            background-color: #737046;
         }
-
         .content{
-            border-radius: 30px;
-            overflow: hidden;
-            width: 70%;
-            top:0%;
-            left: 25%;
-            background-color: white;
-            box-shadow: -5px 5px 40px -15px rgba(0, 0, 0, 1);
-            .ExhName{
-                font-size: 30px;
-                background-color: white;
-                padding: 0px 20px 20px 20px;
-            }
+            width: 80%;
         }
     }
     @media (min-width: 769px) {
         .title{
             line-height: 100px;
-            padding: 0px 20px;
-            margin: 0% 0% 0 10%;
-            width: fit-content;
             font-size: 50px;
-            color: white;
-            background-color: #737046;
         }
-
+        ${ClearfixTitle}{
+            display: none;
+        }
         .content{
-            border-radius: 30px;
-            overflow: hidden;
-            width: 70%;
-            top:0%;
+            width: 75%;
             left: 15%;
-            background-color: white;
-            box-shadow: -5px 5px 40px -15px rgba(0, 0, 0, 1);
-            .ExhName{
-                font-size: 30px;
-                background-color: white;
-                padding: 0px 20px 20px 20px;
-            }
         }
+    }
+    @media (min-width: 996px) {
+        width: 76%;
     }
 
 `
 
 const StyledAppContentContainer=styled.div`
-    margin-top: 10%;
-    @media (min-width: 769px) {
-        margin-top: 5%;
-    }
+    margin-top: 5%;
 `
 
 const CardTitle=styled.div`
@@ -113,18 +87,11 @@ const ColStyle=styled(Col)`
         font-size: 30px;
     }
 `
-const Clearfix=styled.div`
-    padding-top:150px ;
-    margin-top:15% ;
-    @media (min-width: 576px) {
-        padding-top:30px ;
-        margin-top:10%;
-    }
-`
 
 const Exhibitor=()=>{
     return (
         <StyledAppContainer>
+            <ClearfixTitle/>
             {/* Title Start */}
             <div className="title">參展商</div>
             {/* Title End */}
@@ -163,7 +130,7 @@ const Exhibitor=()=>{
                 </div>
                 {/* Content End */}
 
-                <Clearfix/>
+                <ClearfixBottom/>
             </StyledAppContentContainer>
             {/* Picture End */}
         </StyledAppContainer>
