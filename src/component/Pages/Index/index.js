@@ -13,10 +13,24 @@ import Book5 from "../../../image/Book-5.jpg";
 import LinkStyle from "../../Common/LinkStyle";
 import { Carousel } from "antd";
 import { Link } from "react-router-dom";
+import ClearfixBottom from "../../Common/ClearfixBottom";
 
 // Section1 Start \\
 const StyledAppContainer = styled.div`
   display: block;
+  width: 100%;
+  @media (min-width: 576px) {
+    width: 90%;
+  }
+  @media (min-width: 769px) {
+    width: 85%;
+  }
+  @media (min-width: 996px) {
+    width: 74%;
+  }
+  @media (min-width: 1200px) {
+    /* width: 76%; */
+  }
 `;
 
 const StyledSection1Container = styled.section`
@@ -49,14 +63,14 @@ const StyledSection1Container = styled.section`
   }
   @media (min-width: 769px) {
     .info{
-      left: 47%;
+      left: 50%;
       width: 65%;
       font-size: 22px;
     }
   }
   @media (min-width: 996px) {
     .info{
-      left: 47%;
+      left: 48%;
       width: 65%;
       font-size: 30px;
     }
@@ -85,15 +99,21 @@ const StyledAppImgContainer = styled.div`
   }
   @media (min-width: 576px) {
     width:100%;
-    margin: 0 0% 0 10%;
+    margin: 0 5% 0 5%;
   }
   @media (min-width: 769px) {
     width: 100%;
-    margin: 0% 0% 0 10%;
+    margin: 0% 5% 0 12%;
   }
   @media (min-width: 996px) {
-    width: 100%;
-    margin: 0% 0% 0 0%;
+    width: 80%;
+    margin: 0% 0% 0 15%;
+  }
+  @media (min-width: 1200px) {
+    width: 700px;
+    /* width: 80%; */
+    /* margin: 0 auto; */
+    margin: 0% 0% 0 15%;
   }
 `;
 // Section1 End \\
@@ -101,6 +121,19 @@ const StyledAppImgContainer = styled.div`
 // Section2 Start \\
 const StyledSection2Container = styled.section`
   height: 100vh;
+  margin-top: 15%;
+  @media (min-width: 769px) {
+    width: 87%;
+    margin-left: 9%;
+  }
+  @media (min-width: 996px) {
+    width: 88%;
+    margin-left: 13%;
+  }
+  @media (min-width: 1200px) {
+    width: 100%;
+    margin-left: 15%;
+  }
 `;
 const Bulletin = styled.div`
   .line-1 {
@@ -118,26 +151,24 @@ const Bulletin = styled.div`
   }
   .drawing-pin {
     position: absolute;
-    top: -5%;
+    top: -4%;
     left: 0;
     background-color: rgb(175, 171, 171);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin: 0% 0% 5% 47%;
-    margin-bottom: 5%;
   }
 
   .board-1 {
-    /* width: 550px; */
     position: relative;
   }
 
   .board-1::before {
     content: "";
     display: block;
-    width: 100%;
-    padding-top: 150%;
+    width: 500px;
+    padding-top: 190%;
     position: relative;
   }
 
@@ -194,6 +225,9 @@ const Bulletin = styled.div`
     &:nth-of-type(3){
       display: none;
     }
+    &:nth-of-type(4){
+      display: none;
+    }
   }
   ${LinkStyle}{
     &:nth-of-type(3){
@@ -202,6 +236,71 @@ const Bulletin = styled.div`
     &:nth-of-type(4){
       display: none;
     }
+    &:nth-of-type(5){
+      display: none;
+    }
+  }
+  .btn{
+    position: absolute;
+    bottom:4%;
+    left: 5%;
+    z-index: 2;
+  }
+  .button{
+    width: 110px;
+    line-height: 30px;
+    font-size: 28px;
+    padding: 7px 10px;
+    color: white;
+    background-color: #818B8C;
+    border-radius: 10px;
+  }
+  @media (min-width: 450px) {
+    .text sub{
+      background-color: transparent;
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: none;
+      }
+    }
+    ${LinkStyle}{
+      &:nth-of-type(4){
+        display: block;
+      }
+      &:nth-of-type(5){
+        display: none;
+      }
+    }
+  }
+  @media (min-width: 490px) {
+    .text sub{
+      background-color: transparent;
+      /* &:nth-of-type(1){
+        display: block;
+      }
+      &:nth-of-type(2){
+        display: block;
+      }
+      &:nth-of-type(3){
+        display: block;
+      } */
+      &:nth-of-type(4){
+        display: block;
+      }
+    }
+    ${LinkStyle}{
+      /* &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: block;
+      } */
+      &:nth-of-type(5){
+        display: block;
+      }
+    }
   }
   @media (min-width: 576px) {
     .drawing-pin {
@@ -209,7 +308,7 @@ const Bulletin = styled.div`
     }
 
     .board-1 {
-      width: 415px;
+      width: 100%;
       position: relative;
     }
 
@@ -217,12 +316,12 @@ const Bulletin = styled.div`
       content: "";
       display: block;
       width:100%;
-      padding-top: 130%;
+      padding-top: 145%;
       position: relative;
     }
 
     .text {
-      top: 3%;
+      top: 4%;
     }
     .text span {
       font-size: 32px;
@@ -235,6 +334,9 @@ const Bulletin = styled.div`
       &:nth-of-type(3){
         display: none;
       }
+      &:nth-of-type(4){
+        display: none;
+      }
     }
     ${LinkStyle}{
       &:nth-of-type(3){
@@ -243,9 +345,44 @@ const Bulletin = styled.div`
       &:nth-of-type(4){
         display: none;
       }
+      &:nth-of-type(5){
+        display: none;
+      }
+    }
+  }
+  @media (min-width: 680px) {
+    .text sub{
+      background-color: transparent;
+      &:nth-of-type(2){
+        display: block;
+      }
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: none;
+      }
+    }
+    ${LinkStyle}{
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: block;
+      }
+      &:nth-of-type(5){
+        display: none;
+      }
     }
   }
   @media (min-width: 769px) {
+    .board-1::before {
+      padding-top: 120%;
+    }
+    .text {
+      top: 4%;
+      left: 12%;
+    }
     .text sub{
       background-color: transparent;
       &:nth-of-type(2){
@@ -264,26 +401,52 @@ const Bulletin = styled.div`
       }
     }
   }
+  @media (min-width: 925px) {
+    .text sub{
+      background-color: transparent;
+      &:nth-of-type(2){
+        display: block;
+      }
+      &:nth-of-type(3){
+        display: block;
+      }
+    }
+    ${LinkStyle}{
+      &:nth-of-type(3){
+        display: block;
+      }
+      &:nth-of-type(4){
+        display: block;
+      }
+    }
+  }
   @media (min-width: 996px) {
+    .line-1 {
+      width: 320px;
+    }
+    .line-2 {
+      width: 320px;
+      margin-left: 320px;
+    }
     .drawing-pin {
-      top: -5%;
+      top: -40px;
+      margin: 0% 0% 0% 300px;
     }
-
     .board-1 {
-      width: 600px;
-      position: relative;
+      width: 650px;
     }
-
     .board-1::before {
-      content: "";
-      display: block;
-      width: 100%;
-      padding-top: 115%;
-      position: relative;
+      padding-top: 105%;
+    }
+    
+    .board-2 {
+      width: 610px;
     }
 
     .text {
       top: 4%;
+      left:17%;
+      width: 600px;
       font-size: 30px;
     }
     .text span {
@@ -307,13 +470,42 @@ const Bulletin = styled.div`
       }
     }
   }
+  @media (min-width: 1200px) {
+    .line-1 {
+      width: 350px;
+    }
+    .line-2 {
+      width: 350px;
+      margin-left: 350px;
+      transform: skewY(11deg);
+    }
+    .drawing-pin {
+      top: -42px;
+      margin: 0% 0% 0% 340px;
+    }
+    .board-1 {
+      width: 700px;
+    }
+    .board-1::before {
+      padding-top: 100%;
+    }
+    .board-2 {
+      top: 30px;
+      left: 25px;
+      width: 655px;
+    }
+    .text {
+      left:19%;
+      width: 645px;
+    }
+  }
 `;
 // Section2 End \\
 
 // Section3 Start \\
 const StyledSection3Container = styled.section`
   height: 100vh;
-  padding: 15% 0% 5% 0;
+  padding: 50% 0% 5% 0;
   .title{
     color: white;
     background-color: #818B8C;
@@ -322,12 +514,12 @@ const StyledSection3Container = styled.section`
     padding-right: 20px;
     margin-top:15%;
     margin-bottom:5%;
-    width: 30%;
+    width: fit-content;
     font-size: 30px;
   }
   .Carousel {
     position: absolute;
-    top: 10px;
+    top: 12px;
     left: 50%;
     z-index: 1;
     background-color: transparent;
@@ -340,44 +532,37 @@ const StyledSection3Container = styled.section`
     padding: 15% 0%;
     .title{
       line-height: 60px;
-      width: 48%;
       font-size: 38px;
     }
     .Carousel {
-      top: 7px;
+      top: 10px;
     }
   }
-  @media (min-width:796px){
-    padding: 0% 0%;
+  @media (min-width:769px){
+    padding: 0% 0% 0 0;
+    margin-left: 10%;
     .Carousel {
-      position: absolute;
-      top: 6px;
-      left: 50%;
-      z-index: 1;
-      background-color: transparent;
-      transform: translateX(-50%);
+      top: 12px;
     }
   }
   @media (min-width:996px){
-    padding: 0% 0%;
     .title{
       line-height: 70px;
-      width: 38%;
       font-size: 45px;
     }
     .Carousel {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      z-index: 1;
-      background-color: transparent;
-      transform: translateX(-50%);
+      top: 18px;
+    }
+  }
+  @media (min-width:1200px){
+    .Carousel {
+      top: 21px;
     }
   }
 `;
 const WoodBookShelf = styled.div`
   width: 100%;
-  margin: 25% 0 10% 0;
+  margin: 20% 0 -5% 0;
   .pic-container-1 {
     width: 95%;
     position: relative;
@@ -426,7 +611,7 @@ const WoodBookShelf = styled.div`
   }
   @media (min-width: 576px){
     width: 96%;
-    margin: 30% 0 0 2%;
+    margin: 30% 0 20% 2%;
     .pic-container-1 {
       width: 94%;
       position: relative;
@@ -434,12 +619,16 @@ const WoodBookShelf = styled.div`
     }
   }
   @media (min-width:769px) {
-    width: 100%;
-    margin: 50% 0 0 2%;
+    width: 96%;
+    margin: 32% 0% 20% 0%;
   }
   @media (min-width:996px) {
-    width: 100%;
-    margin: 40% 0 0 2%;
+    width: 90%;
+    margin: 25% 0 0 5%;
+  }
+  @media (min-width: 1200px) {
+    width: 700px;
+    margin: 20% 0 0 5%;
   }
 `;
 const PreButton=styled.div`
@@ -509,7 +698,9 @@ const Section2 = () => {
             <img className="wood" src={wood} alt="" />
           </div>
           <div className="board-2"></div>
-          <div className="button"></div>
+          <LinkStyle to="#!" className="btn">
+            <div className="button">看更多</div>
+          </LinkStyle>
         </Bulletin>
       </StyledSection2Container>
     </React.Fragment>
@@ -523,7 +714,6 @@ const Section3 = () => {
     <React.Fragment>
       <StyledSection3Container>
         <div className="title">新書推薦</div> 
-
         <WoodBookShelf>
           <Carousel
             className="Carousel"
@@ -557,7 +747,7 @@ const Section3 = () => {
             <img className="pic-bottom" src={wood} alt="" />
           </div>
         </WoodBookShelf>
-
+        <ClearfixBottom/>
       </StyledSection3Container>
     </React.Fragment>
   );
@@ -591,14 +781,14 @@ const Index = () => {
                   <span>最新消息</span>
                   <br />
                   <LinkStyle to="#!">
-                    <div>2022年11月16日</div>
+                    <div>2023年11月16日</div>
                     2023台北國際書展「城市在閱讀」活動開放線上報名
                   </LinkStyle>
                   <br />
                   <sub>------------------------------------------------------------</sub>
                   <br />
                   <LinkStyle to="#!">
-                    <div>2022年11月15日</div>
+                    <div>2023年11月15日</div>
                     「2023金蝶獎-台灣出版設計大獎」13本入圍名單出爐 選紙、文字
                     單純設計搶眼
                   </LinkStyle>
@@ -606,7 +796,7 @@ const Index = () => {
                   <sub>------------------------------------------------------------</sub>
                   <br />
                   <LinkStyle to="#!">
-                    <div>2022年11月03日</div>
+                    <div>2023年11月03日</div>
                     超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展
                     中、英文紀錄片　Youtube上線！
                   </LinkStyle>
@@ -614,10 +804,16 @@ const Index = () => {
                   <sub>------------------------------------------------------------</sub>
                   <br />
                   <LinkStyle to="#!">
-                    <div>2022年11月01日</div>
+                    <div>2023年11月01日</div>
                     2023台北國際書展 主視覺出爐 引爆閱讀的多重宇宙
                   </LinkStyle>
+                  {/* <br /> */}
+                  <sub>------------------------------------------------------------</sub>
                   <br />
+                  <LinkStyle to="#!">
+                    <div>2023年10月17日</div>
+                    2023台北國際書展 「寒假趣書展」及偏鄉學校補助，10月21日開放報名
+                  </LinkStyle>
                 </div>
               </Tween>
             </Timeline>

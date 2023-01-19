@@ -1,7 +1,4 @@
-import { EditOutlined, EllipsisOutlined, EnvironmentFilled, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
 import React from "react";
-import LinkStyle from '../../Common/LinkStyle';
 import styled from "styled-components";
 import ClearfixTitle from '../../Common/ClearfixTitle';
 import ClearfixBottom from "../../Common/ClearfixBottom";
@@ -45,27 +42,9 @@ const StyledAppPicContainer=styled.div`
     width: 100%;
     margin-top: 5%;
     margin-left: 10%;
-    .pic{
-        /* width: 800px; */
-        width: 89%;
-        height: 60px;
-        background-color: #818B8C;
-        /* margin-left: 20px; */
-        margin-left: 2%;
-        /* box-shadow: inset 0px -3px 2px -4px rgba(0, 0, 0, 1); */
-        box-shadow: inset 0px -40px 15px -40px rgba(0, 0, 0, 1);
-        z-index: 1;
-        display: none;
-    }
-    .pic-bottom{
-        /* width: 850px; */
-        width: 94%;
-        height: 40px;
-        background-color: #818B8C;
-        /* box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 1); */
-        box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 1);
-        display: none;
-    }
+    /* @media (min-width: 996px) {
+        margin-top: 5%;
+    } */
 `
 
 const StyledAppContentContainer=styled.div`
@@ -129,52 +108,80 @@ const StyledAppContentContainer=styled.div`
     }
     @media (min-width: 996px) {
         width: 76%;
+        position: absolute;
+        z-index: 2;
+        bottom: 40%;
+    }
+`
+const Box=styled.div`
+    @media (min-width: 996px){
+        /* padding:80% 0 0 50%; */
+    }
+`
+const StyledAppBookShelf=styled.div`
+    margin-top: 98%;
+    @media (min-width: 996px){
+        .pic{
+            width: 80%;
+            height: 60px;
+            background-color: #818B8C;
+            margin-left: 3%;
+            box-shadow: inset 0px -40px 15px -40px rgba(0, 0, 0, 1);
+            z-index: 1;
+        }
+        .pic-bottom{
+            width: 85%;
+            height: 40px;
+            margin-left: 1%;
+            background-color: #818B8C;
+            box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 1);
+        }
     }
 `
 
 const StyledAppBracket1=styled.div`
-    position: absolute;
-    left: 5%;
-    z-index: 3;
-    /* box-shadow: inset 0px 12px 10px -10px rgba(0, 0, 0, 1); */
-    box-shadow: inset 0px 100px 100px -100px rgba(0, 0, 0, 1);
-    display: none;
-    .pic-bracket-1{
-        width: 20px;
-        height: 60px;
-        background-color: black;
-    }
-    .pic-bracket-2{
+    @media (min-width: 996px){
         position: absolute;
-        bottom: 10px;
-        left: 7px;
-        width: 20px;
-        height: 50px;
-        background-color: rgb(35, 35, 35);
-        transform: skewX(-15deg);
+        left: 8%;
+        z-index: 3;
+        box-shadow: inset 0px 100px 100px -100px rgba(0, 0, 0, 1);
+        .pic-bracket-1{
+            width: 20px;
+            height: 60px;
+            background-color: black;
+        }
+        .pic-bracket-2{
+            position: absolute;
+            bottom: 10px;
+            left: 7px;
+            width: 20px;
+            height: 50px;
+            background-color: rgb(35, 35, 35);
+            transform: skewX(-15deg);
+        }
     }
 `
 
 const StyledAppBracket2=styled.div`
-    position: absolute;
-    /* left: 640px; */
-    left: 80%;
-    z-index: 3;
-    box-shadow: inset 0px 12px 10px -10px rgba(0, 0, 0, 1);
-    display: none;
-    .pic-bracket-3{
-        width: 20px;
-        height: 60px;
-        background-color: black;
-    }
-    .pic-bracket-4{
+    @media (min-width: 996px){
         position: absolute;
-        top:0;
-        left: 7px;
-        width: 20px;
-        height: 50px;
-        background-color: rgb(35, 35, 35);
-        transform: skewX(-15deg);
+        left: 75%;
+        z-index: 3;
+        box-shadow: inset 0px 12px 10px -10px rgba(0, 0, 0, 1);
+        .pic-bracket-3{
+            width: 20px;
+            height: 60px;
+            background-color: black;
+        }
+        .pic-bracket-4{
+            position: absolute;
+            top:0;
+            left: 7px;
+            width: 20px;
+            height: 50px;
+            background-color: rgb(35, 35, 35);
+            transform: skewX(-15deg);
+        }
     }
 `
 
@@ -236,17 +243,21 @@ const Transport=()=>{
                     </div>
                 </StyledAppContentContainer>
                 {/* Content End */}
-                <div className="pic"></div>
-                <div className="pic-bottom"></div>
-                <StyledAppBracket1>
-                    <div className="pic-bracket-1"></div>
-                    <div className="pic-bracket-2"></div>
-                </StyledAppBracket1>
-                <StyledAppBracket2>
-                    <div className="pic-bracket-3"></div>
-                    <div className="pic-bracket-4"></div>
-                </StyledAppBracket2>
-                <div></div>
+
+                <Box/>
+
+                <StyledAppBookShelf>
+                    <div className="pic"></div>
+                    <div className="pic-bottom"></div>
+                    <StyledAppBracket1>
+                        <div className="pic-bracket-1"></div>
+                        <div className="pic-bracket-2"></div>
+                    </StyledAppBracket1>
+                    <StyledAppBracket2>
+                        <div className="pic-bracket-3"></div>
+                        <div className="pic-bracket-4"></div>
+                    </StyledAppBracket2>
+                </StyledAppBookShelf>
             </StyledAppPicContainer>
             {/* Picture End */}
 

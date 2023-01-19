@@ -101,11 +101,15 @@ const StyledAppPicContainer=styled.div`
         box-shadow: 0px 20px 120px 0px rgba(0, 0, 0, 1),0px -5px 200px -10px rgba(0, 0, 0, 1);
     }
     @media (min-width: 769px) {
-        margin-left: 10%;
         width: 82%;
+        margin-left: 10%;
     }
     @media (min-width: 996px) {
         margin-top: 10%;
+        margin-left: 13%;
+    }
+    @media (min-width: 1200px) {
+        width: 750px;
     }
 `
 

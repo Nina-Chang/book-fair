@@ -8,7 +8,6 @@ import Ticket from './Ticket';
 function Layout(){
   return (
     <div className="App">
-      <header className="App-header">
         <StyledAppContainer>
           <Title/>
           <ClearfixTitle/>
@@ -18,7 +17,6 @@ function Layout(){
           <ClearfixTicket/>
           <Ticket/>
         </StyledAppContainer>
-      </header>
     </div>
   )
 }
@@ -32,13 +30,9 @@ const StyledAppContainer=styled.div`
     flex-direction: row;
     justify-content: space-evenly;
   }
-  /* @media (min-width: 996px) {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-  } */
 `
 const ClearfixTitle=styled.div`
+  width: 0px;
   @media (min-width: 576px) {
     width: 10px;
   }
@@ -48,10 +42,10 @@ const ClearfixTitle=styled.div`
   @media (min-width: 996px) {
     width: 0px;
   }
-  width: 0px;
   `
 
 const ClearfixTicket=styled.div`
+  width: 0px;
   @media (min-width: 576px) {
     width: 200px;
   }
@@ -61,5 +55,4 @@ const ClearfixTicket=styled.div`
   @media (min-width: 996px) {
     width: 150px;
   }
-  width: 0px;
 `
