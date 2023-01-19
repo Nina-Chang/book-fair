@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import ticketCompleted from "../../image/ticket-completed-brown.png";
 import ticketrip1 from "../../image/ticket-ripped-1-brown-sm.png";
@@ -12,7 +12,7 @@ import {
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 import LinkStyle from "../Common/LinkStyle";
-import { useNavigate } from "react-router-dom";
+import TicketState from "../Common/TicketState";
 
 const defaultClickStatus = {
   IsClick1: false,
@@ -29,33 +29,11 @@ const Ticket = () => {
   const [IsClick3, setIsClick3] = React.useState(defaultClickStatus.IsClick3);
   const [IsClick4, setIsClick4] = React.useState(defaultClickStatus.IsClick4);
   const [IsClick5, setIsClick5] = React.useState(defaultClickStatus.IsClick5);
-  const history = useNavigate();
-  useEffect(() => {
-    try {
-      // if(history('/exhibitor')&&IsClick1===true){
-      //   setIsClick1(true);
-      // }
-      // if(IsClick1===false){
-      //   setIsClick1(true);
-      //   console.log('success');
-      // }
-      // if(!history('/')&&IsClick2===true){
-      //   setIsClick2(true);
-      // }
-      // if(!history('/')&&IsClick3===true){
-      //   setIsClick3(true);
-      // }
-      // if(!history('/')&&IsClick4===true){
-      //   setIsClick4(true);
-      // }
-      // if(!history('/')&&IsClick5===true){
-      //   setIsClick5(true);
-      // }
-    } catch {}
-  }, []);
+  const ctx=useContext(TicketState);
   return (
     // NavBar Start
     <StyledAppNavBar>
+      {/* Ticket1 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
           if (IsClick1 === false) {
@@ -65,9 +43,6 @@ const Ticket = () => {
             setIsClick4(false);
             setIsClick5(false);
           }
-          // else{
-          //   setIsClick1(false);
-          // }
         }}
       >
         <span>
@@ -84,19 +59,21 @@ const Ticket = () => {
             {/* <FontAwesomeIcon icon={faStore} className="Icon" /> */}
           </LinkStyle>
           {IsClick1 ? (
-            <div>
+            <div className="TktContainer">
               <PutTicketRip />
               <PutTicketRip2 />
             </div>
           ) : (
-            <div>
+            <div className="TktContainer">
               <PutTicketRip2 style={{ display: "none" }} />
               <PutTicket />
             </div>
           )}
         </span>
       </StyledAppNavBarTicket>
+      {/* Ticket1 End */}
 
+      {/* Ticket2 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
           if (IsClick2 === false) {
@@ -107,18 +84,18 @@ const Ticket = () => {
             setIsClick5(false);
           }
         }}
-      >
+        >
         <span>
           <LinkStyle to="/ticketinfo">
             {IsClick2 ? (
               <FontAwesomeIcon
-                icon={faTicket}
-                style={{ left: "-20%" }}
-                className="Icon"
+              icon={faTicket}
+              style={{ left: "-20%" }}
+              className="Icon"
               />
-            ) : (
+              ) : (
               <FontAwesomeIcon icon={faTicket} className="Icon" />
-            )}
+              )}
             {/* <FontAwesomeIcon icon={faTicket} className="Icon" /> */}
           </LinkStyle>
           {IsClick2 ? (
@@ -135,32 +112,34 @@ const Ticket = () => {
           {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
       </StyledAppNavBarTicket>
+      {/* Ticket2 End */}
 
+      {/* Ticket3 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
-          if (IsClick3 === false) {
-            setIsClick1(false);
-            setIsClick2(false);
-            setIsClick3(true);
-            setIsClick4(false);
-            setIsClick5(false);
+          if (ctx.IsClick3 === false) {
+            ctx.setIsClick1(false);
+            ctx.setIsClick2(false);
+            ctx.setIsClick3(true);
+            ctx.setIsClick4(false);
+            ctx.setIsClick5(false);
           }
         }}
-      >
+        >
         <span>
           <LinkStyle to="/transport">
-            {IsClick3 ? (
+            {ctx.IsClick3 ? (
               <FontAwesomeIcon
-                icon={faVanShuttle}
-                style={{ left: "-20%" }}
-                className="Icon"
+              icon={faVanShuttle}
+              style={{ left: "-20%" }}
+              className="Icon"
               />
-            ) : (
-              <FontAwesomeIcon icon={faVanShuttle} className="Icon" />
-            )}
+              ) : (
+                <FontAwesomeIcon icon={faVanShuttle} className="Icon" />
+                )}
             {/* <FontAwesomeIcon icon={faVanShuttle} className="Icon" /> */}
           </LinkStyle>
-          {IsClick3 ? (
+          {ctx.IsClick3 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -174,31 +153,34 @@ const Ticket = () => {
           {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
       </StyledAppNavBarTicket>
+      {/* Ticket3 End */}
+
+      {/* Ticket4 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
-          if (IsClick4 === false) {
-            setIsClick1(false);
-            setIsClick2(false);
-            setIsClick3(false);
-            setIsClick4(true);
-            setIsClick5(false);
+          if (ctx.IsClick4 === false) {
+            ctx.setIsClick1(false);
+            ctx.setIsClick2(false);
+            ctx.setIsClick3(false);
+            ctx.setIsClick4(true);
+            ctx.setIsClick5(false);
           }
         }}
-      >
+        >
         <span>
           <LinkStyle to="/archives">
-            {IsClick4 ? (
+            {ctx.IsClick4 ? (
               <FontAwesomeIcon
-                icon={faFolderOpen}
-                style={{ left: "-20%" }}
-                className="Icon"
+              icon={faFolderOpen}
+              style={{ left: "-20%" }}
+              className="Icon"
               />
-            ) : (
-              <FontAwesomeIcon icon={faFolderOpen} className="Icon" />
-            )}
+              ) : (
+                <FontAwesomeIcon icon={faFolderOpen} className="Icon" />
+                )}
             {/* <FontAwesomeIcon icon={faFolderOpen} className="Icon" /> */}
           </LinkStyle>
-          {IsClick4 ? (
+          {ctx.IsClick4 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -212,31 +194,34 @@ const Ticket = () => {
           {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
       </StyledAppNavBarTicket>
+      {/* Ticket4 End */}
+
+      {/* Ticket5 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
-          if (IsClick5 === false) {
-            setIsClick1(false);
-            setIsClick2(false);
-            setIsClick3(false);
-            setIsClick4(false);
-            setIsClick5(true);
+          if (ctx.IsClick5 === false) {
+            ctx.setIsClick1(false);
+            ctx.setIsClick2(false);
+            ctx.setIsClick3(false);
+            ctx.setIsClick4(false);
+            ctx.setIsClick5(true);
           }
         }}
-      >
+        >
         <span>
           <LinkStyle to="/contact-us">
-            {IsClick5 ? (
+            {ctx.IsClick5 ? (
               <FontAwesomeIcon
-                icon={faMessage}
-                style={{ left: "-20%" }}
-                className="Icon"
+              icon={faMessage}
+              style={{ left: "-20%" }}
+              className="Icon"
               />
-            ) : (
-              <FontAwesomeIcon icon={faMessage} className="Icon" />
-            )}
+              ) : (
+                <FontAwesomeIcon icon={faMessage} className="Icon" />
+                )}
             {/* <FontAwesomeIcon icon={faMessage} className="Icon" /> */}
           </LinkStyle>
-          {IsClick5 ? (
+          {ctx.IsClick5 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -250,9 +235,7 @@ const Ticket = () => {
           {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
       </StyledAppNavBarTicket>
-      
-
-
+      {/* Ticket5 End */}
     </StyledAppNavBar>
     // NavBar End
   );
@@ -271,8 +254,9 @@ const StyledAppNavBar = styled.div`
   z-index: 4;
   display: flex;
   >div{
-    transform: rotate(90deg) scale(0.65);
-  } 
+    transform: rotate(90deg) scale(0.6);
+  }
+  
   @media (min-width: 577px) {
     height: 100%;
     /* overflow: hidden; */
@@ -285,7 +269,6 @@ const StyledAppNavBar = styled.div`
     >div{
       transform: rotate(0deg) scale(0.8);
     } 
-    /* z-index: 99; */
   }
   @media (min-width: 769px) {
     left: 80%;
@@ -305,10 +288,11 @@ const StyledAppNavBar = styled.div`
 `;
 
 const StyledAppNavBarTicket = styled.div`
+  background-color: transparent;
   position: relative;
   width: 290px;
   height: 140px;
-
+    
   span {
     position: absolute;
     top: -10%;
@@ -343,6 +327,7 @@ const StyledAppNavBarTicket = styled.div`
 `;
 
 const PutTicket = styled(StyledAppNavBarTicket)`
+  background-color: transparent;
   &:after {
     content: "";
     display: block;
@@ -359,17 +344,18 @@ const PutTicket = styled(StyledAppNavBarTicket)`
   }
 `;
 const PutTicketRip = styled(StyledAppNavBarTicket)`
+  background-color: transparent;
   background-image: url(${ticketrip1});
   background-repeat: no-repeat;
   transform: scale(0.91) translate(-8%, -87%);
   z-index: 1;
 `;
 const PutTicketRip2 = styled(StyledAppNavBarTicket)`
+  width:50%;
+  background-color: transparent;
   background-image: url(${ticketrip2});
   background-repeat: no-repeat;
-  transform: translate(-90%, -103%) rotate(58deg);
-  top: -18px;
-  left: 30%;
+  transform: translate(-98%, -159%) rotate(58deg);
   z-index: 0;
 `;
 
