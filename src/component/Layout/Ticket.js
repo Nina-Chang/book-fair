@@ -14,21 +14,21 @@ import {
 import LinkStyle from "../Common/LinkStyle";
 import TicketState from "../Common/TicketState";
 
-const defaultClickStatus = {
-  IsClick1: false,
-  IsClick2: false,
-  IsClick3: false,
-  IsClick4: false,
-  IsClick5: false,
-};
-const Clicked = React.createContext(defaultClickStatus);
+// const defaultClickStatus = {
+//   IsClick1: false,
+//   IsClick2: false,
+//   IsClick3: false,
+//   IsClick4: false,
+//   IsClick5: false,
+// };
+// const Clicked = React.createContext(defaultClickStatus);
 
 const Ticket = () => {
-  const [IsClick1, setIsClick1] = React.useState(defaultClickStatus.IsClick1);
-  const [IsClick2, setIsClick2] = React.useState(defaultClickStatus.IsClick2);
-  const [IsClick3, setIsClick3] = React.useState(defaultClickStatus.IsClick3);
-  const [IsClick4, setIsClick4] = React.useState(defaultClickStatus.IsClick4);
-  const [IsClick5, setIsClick5] = React.useState(defaultClickStatus.IsClick5);
+  // const [IsClick1, setIsClick1] = React.useState(defaultClickStatus.IsClick1);
+  // const [IsClick2, setIsClick2] = React.useState(defaultClickStatus.IsClick2);
+  // const [IsClick3, setIsClick3] = React.useState(defaultClickStatus.IsClick3);
+  // const [IsClick4, setIsClick4] = React.useState(defaultClickStatus.IsClick4);
+  // const [IsClick5, setIsClick5] = React.useState(defaultClickStatus.IsClick5);
   const ctx=useContext(TicketState);
   return (
     // NavBar Start
@@ -36,18 +36,18 @@ const Ticket = () => {
       {/* Ticket1 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
-          if (IsClick1 === false) {
-            setIsClick1(true);
-            setIsClick2(false);
-            setIsClick3(false);
-            setIsClick4(false);
-            setIsClick5(false);
+          if (ctx.IsClick1 === false) {
+            ctx.setIsClick1(true);
+            ctx.setIsClick2(false);
+            ctx.setIsClick3(false);
+            ctx.setIsClick4(false);
+            ctx.setIsClick5(false);
           }
         }}
       >
         <span>
           <LinkStyle to="/exhibitor">
-            {IsClick1 ? (
+            {ctx.IsClick1 ? (
               <FontAwesomeIcon
                 icon={faStore}
                 style={{ left: "-20%" }}
@@ -58,7 +58,7 @@ const Ticket = () => {
             )}
             {/* <FontAwesomeIcon icon={faStore} className="Icon" /> */}
           </LinkStyle>
-          {IsClick1 ? (
+          {ctx.IsClick1 ? (
             <div className="TktContainer">
               <PutTicketRip />
               <PutTicketRip2 />
@@ -76,18 +76,18 @@ const Ticket = () => {
       {/* Ticket2 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
-          if (IsClick2 === false) {
-            setIsClick1(false);
-            setIsClick2(true);
-            setIsClick3(false);
-            setIsClick4(false);
-            setIsClick5(false);
+          if (ctx.IsClick2 === false) {
+            ctx.setIsClick1(false);
+            ctx.setIsClick2(true);
+            ctx.setIsClick3(false);
+            ctx.setIsClick4(false);
+            ctx.setIsClick5(false);
           }
         }}
         >
         <span>
           <LinkStyle to="/ticketinfo">
-            {IsClick2 ? (
+            {ctx.IsClick2 ? (
               <FontAwesomeIcon
               icon={faTicket}
               style={{ left: "-20%" }}
@@ -98,7 +98,7 @@ const Ticket = () => {
               )}
             {/* <FontAwesomeIcon icon={faTicket} className="Icon" /> */}
           </LinkStyle>
-          {IsClick2 ? (
+          {ctx.IsClick2 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
