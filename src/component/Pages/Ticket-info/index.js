@@ -15,6 +15,13 @@ const StyledAppContainer=styled.div`
         width: fit-content;
         font-size: 30px;
     }
+    .title-sm{
+        color: #737046;
+        line-height: 50px;
+        font-size: 30px;
+        margin-left: 10%;
+        font-weight: 600;
+    }
     @media (min-width: 576px) {
         width: 90%;
         .title{
@@ -23,11 +30,19 @@ const StyledAppContainer=styled.div`
             margin: 0% 0% 0 10%;
             font-size: 45px;
         }
+        .title-sm{
+            line-height: 80px;
+            font-size: 38px;
+        }
     }
     @media (min-width: 769px) {
         .title{
             line-height: 100px;
             font-size: 50px;
+        }
+        .title-sm{
+            line-height: 90px;
+            font-size: 45px;
         }
         ${ClearfixTitle}{
             display: none;
@@ -244,6 +259,7 @@ const TicketInfo=()=>{
             <ClearfixTitle/>
             {/* Title Start */}
             <div className="title">購票資訊</div>
+            <div className="title-sm">台北國際書展2024</div>
             {/* Title End */}
 
             {/* Picture Start */}
