@@ -42,9 +42,7 @@ const StyledAppPicContainer=styled.div`
     width: 100%;
     margin-top: 5%;
     margin-left: 10%;
-    /* @media (min-width: 996px) {
-        margin-top: 5%;
-    } */
+
 `
 
 const StyledAppContentContainer=styled.div`
@@ -107,20 +105,21 @@ const StyledAppContentContainer=styled.div`
         
     }
     @media (min-width: 996px) {
-        width: 76%;
+        left: 6%;
+        width: 600px;
         position: absolute;
         z-index: 2;
         bottom: 40%;
     }
-`
-const Box=styled.div`
-    @media (min-width: 996px){
-        /* padding:80% 0 0 50%; */
+    @media (min-width: 1200px) {
+        left: 4.5%;
+        width: 700px;
     }
 `
+
 const StyledAppBookShelf=styled.div`
-    margin-top: 98%;
-    @media (min-width: 996px){
+    /* margin-top: 98%; */
+    /* @media (min-width: 996px){
         .pic{
             width: 80%;
             height: 60px;
@@ -135,6 +134,44 @@ const StyledAppBookShelf=styled.div`
             margin-left: 1%;
             background-color: #818B8C;
             box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 1);
+        }
+    } */
+    @media (min-width: 996px){
+        margin-top: 750px;
+        .pic{
+            width: 80%;
+            height: 60px;
+            background-color: #818B8C;
+            margin-left: 3%;
+            box-shadow: inset 0px -40px 15px -40px rgba(0, 0, 0, 1);
+            z-index: 1;
+        }
+        .pic-bottom{
+            width: 85%;
+            height: 40px;
+            margin-left: 1%;
+            background-color: #818B8C;
+            box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 1);
+        }
+    }
+    @media (min-width: 1200px){
+        margin-top: 570px;
+        .pic{
+            width: 735px;
+            /* width: 80%; */
+            /* height: 60px;
+            background-color: #818B8C;
+            margin-left: 3%;
+            box-shadow: inset 0px -40px 15px -40px rgba(0, 0, 0, 1);
+            z-index: 1; */
+        }
+        .pic-bottom{
+            width: 770px;
+            /* width: 85%; */
+            /* height: 40px;
+            margin-left: 1%;
+            background-color: #818B8C;
+            box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 1); */
         }
     }
 `
@@ -183,6 +220,10 @@ const StyledAppBracket2=styled.div`
             transform: skewX(-15deg);
         }
     }
+    @media (min-width: 1200px){
+        left: 700px;
+    }
+    
 `
 
 
@@ -195,6 +236,7 @@ const Transport=()=>{
             {/* Title End */}
 
             {/* Picture Start */}
+            
             <StyledAppPicContainer>
                 {/* Content Start */}
                 <StyledAppContentContainer>
@@ -242,10 +284,6 @@ const Transport=()=>{
                         </span>
                     </div>
                 </StyledAppContentContainer>
-                {/* Content End */}
-
-                <Box/>
-
                 <StyledAppBookShelf>
                     <div className="pic"></div>
                     <div className="pic-bottom"></div>
@@ -258,6 +296,8 @@ const Transport=()=>{
                         <div className="pic-bracket-4"></div>
                     </StyledAppBracket2>
                 </StyledAppBookShelf>
+                {/* Content End */}
+
             </StyledAppPicContainer>
             {/* Picture End */}
 
