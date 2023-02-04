@@ -12,42 +12,33 @@ import {
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 import LinkStyle from "../Common/LinkStyle";
-import TicketState from "../Common/TicketState";
+import {Context} from "../Common/TicketState";
 
-// const defaultClickStatus = {
-//   IsClick1: false,
-//   IsClick2: false,
-//   IsClick3: false,
-//   IsClick4: false,
-//   IsClick5: false,
-// };
-// const Clicked = React.createContext(defaultClickStatus);
 
 const Ticket = () => {
-  // const [IsClick1, setIsClick1] = React.useState(defaultClickStatus.IsClick1);
-  // const [IsClick2, setIsClick2] = React.useState(defaultClickStatus.IsClick2);
-  // const [IsClick3, setIsClick3] = React.useState(defaultClickStatus.IsClick3);
-  // const [IsClick4, setIsClick4] = React.useState(defaultClickStatus.IsClick4);
-  // const [IsClick5, setIsClick5] = React.useState(defaultClickStatus.IsClick5);
-  const ctx=useContext(TicketState);
+  const {IsClick1,setIsClick1}=useContext(Context);
+  // const [IsClick2,setIsClick2]=useContext(Context);
+  // const [IsClick3,setIsClick3]=useContext(Context);
+  // const [IsClick4,setIsClick4]=useContext(Context);
+  // const [IsClick5,setIsClick5]=useContext(Context);
   return (
     // NavBar Start
     <StyledAppNavBar>
       {/* Ticket1 Start */}
       <StyledAppNavBarTicket
         onClick={() => {
-          if (ctx.IsClick1 === false) {
-            ctx.setIsClick1(true);
-            ctx.setIsClick2(false);
-            ctx.setIsClick3(false);
-            ctx.setIsClick4(false);
-            ctx.setIsClick5(false);
+          if (IsClick1 === false) {
+            setIsClick1(true);
+            // setIsClick2(false);
+            // setIsClick3(false);
+            // setIsClick4(false);
+            // setIsClick5(false);
           }
         }}
       >
         <span>
           <LinkStyle to="/exhibitor">
-            {ctx.IsClick1 ? (
+            {IsClick1 ? (
               <FontAwesomeIcon
                 icon={faStore}
                 style={{ left: "-20%" }}
@@ -56,9 +47,8 @@ const Ticket = () => {
             ) : (
               <FontAwesomeIcon icon={faStore} className="Icon" />
             )}
-            {/* <FontAwesomeIcon icon={faStore} className="Icon" /> */}
           </LinkStyle>
-          {ctx.IsClick1 ? (
+          {IsClick1 ? (
             <div className="TktContainer">
               <PutTicketRip />
               <PutTicketRip2 />
@@ -74,7 +64,7 @@ const Ticket = () => {
       {/* Ticket1 End */}
 
       {/* Ticket2 Start */}
-      <StyledAppNavBarTicket
+      {/* <StyledAppNavBarTicket
         onClick={() => {
           if (ctx.IsClick2 === false) {
             ctx.setIsClick1(false);
@@ -96,7 +86,6 @@ const Ticket = () => {
               ) : (
               <FontAwesomeIcon icon={faTicket} className="Icon" />
               )}
-            {/* <FontAwesomeIcon icon={faTicket} className="Icon" /> */}
           </LinkStyle>
           {ctx.IsClick2 ? (
             <div>
@@ -109,13 +98,12 @@ const Ticket = () => {
               <PutTicket />
             </div>
           )}
-          {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
-      </StyledAppNavBarTicket>
+      </StyledAppNavBarTicket> */}
       {/* Ticket2 End */}
 
       {/* Ticket3 Start */}
-      <StyledAppNavBarTicket
+      {/* <StyledAppNavBarTicket
         onClick={() => {
           if (ctx.IsClick3 === false) {
             ctx.setIsClick1(false);
@@ -137,7 +125,6 @@ const Ticket = () => {
               ) : (
                 <FontAwesomeIcon icon={faVanShuttle} className="Icon" />
                 )}
-            {/* <FontAwesomeIcon icon={faVanShuttle} className="Icon" /> */}
           </LinkStyle>
           {ctx.IsClick3 ? (
             <div>
@@ -150,13 +137,12 @@ const Ticket = () => {
               <PutTicket />
             </div>
           )}
-          {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
-      </StyledAppNavBarTicket>
+      </StyledAppNavBarTicket> */}
       {/* Ticket3 End */}
 
       {/* Ticket4 Start */}
-      <StyledAppNavBarTicket
+      {/* <StyledAppNavBarTicket
         onClick={() => {
           if (ctx.IsClick4 === false) {
             ctx.setIsClick1(false);
@@ -178,7 +164,6 @@ const Ticket = () => {
               ) : (
                 <FontAwesomeIcon icon={faFolderOpen} className="Icon" />
                 )}
-            {/* <FontAwesomeIcon icon={faFolderOpen} className="Icon" /> */}
           </LinkStyle>
           {ctx.IsClick4 ? (
             <div>
@@ -191,13 +176,12 @@ const Ticket = () => {
               <PutTicket />
             </div>
           )}
-          {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
-      </StyledAppNavBarTicket>
+      </StyledAppNavBarTicket> */}
       {/* Ticket4 End */}
 
       {/* Ticket5 Start */}
-      <StyledAppNavBarTicket
+      {/* <StyledAppNavBarTicket
         onClick={() => {
           if (ctx.IsClick5 === false) {
             ctx.setIsClick1(false);
@@ -219,7 +203,6 @@ const Ticket = () => {
               ) : (
                 <FontAwesomeIcon icon={faMessage} className="Icon" />
                 )}
-            {/* <FontAwesomeIcon icon={faMessage} className="Icon" /> */}
           </LinkStyle>
           {ctx.IsClick5 ? (
             <div>
@@ -232,9 +215,8 @@ const Ticket = () => {
               <PutTicket />
             </div>
           )}
-          {/* <img src={ticketrip2} style={{transform:'translate(-90%,-61%) rotate(55deg)'}} alt="" /> */}
         </span>
-      </StyledAppNavBarTicket>
+      </StyledAppNavBarTicket> */}
       {/* Ticket5 End */}
     </StyledAppNavBar>
     // NavBar End

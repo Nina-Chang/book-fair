@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import{Outlet}from "react-router-dom";
 import Title from './Title';
 import Ticket from './Ticket';
+import { TicketState } from '../Common/TicketState';
 
 function Layout(){
   return (
     <div className="App">
+      {/* <TicketState> */}
         <StyledAppContainer>
           <Title/>
           <ClearfixTitle/>
@@ -17,6 +19,7 @@ function Layout(){
           <ClearfixTicket/>
           <Ticket/>
         </StyledAppContainer>
+      {/* </TicketState> */}
     </div>
   )
 }

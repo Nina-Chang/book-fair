@@ -9,12 +9,12 @@ import Archives from '../Pages/Archives';
 import ContactUs from '../Pages/Contact-us';
 import 'antd/dist/reset.css';
 import ScrollToTop from "../Common/ScrollToTop";
-import {TicketState} from "../Common/TicketState"
+import {ContextProvider} from "../Common/TicketState";
 
 const App=()=>{
     return(
         // Content Start
-        <TicketState>
+        <ContextProvider>
             <ScrollToTop>
                 <Routes>
                     <Route path='/' element={<Layout/>}>
@@ -27,7 +27,7 @@ const App=()=>{
                     </Route>
                 </Routes>
             </ScrollToTop>
-        </TicketState>
+        </ContextProvider>
         // Content End
     );
 }
