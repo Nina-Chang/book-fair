@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext ,useEffect} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ribbon from "../../image/ribbon-sm-1.png";
@@ -10,6 +10,13 @@ const Title = () => {
   const {setIsClick3}=Ticket();
   const {setIsClick4}=Ticket();
   const {setIsClick5}=Ticket();
+  useEffect(()=>{
+    localStorage.removeItem("ticketState1");
+    localStorage.removeItem("ticketState2");
+    localStorage.removeItem("ticketState3");
+    localStorage.removeItem("ticketState4");
+    localStorage.removeItem("ticketState5");
+  },[]);
   return (
     // Title Start
     <StyledAppTitle>

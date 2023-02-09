@@ -12,15 +12,36 @@ import {
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 import LinkStyle from "../Common/LinkStyle";
-import {Context} from "../Common/TicketState";
 
 
 const Ticket = () => {
-  const {IsClick1,setIsClick1}=useContext(Context);
-  // const [IsClick2,setIsClick2]=useContext(Context);
-  // const [IsClick3,setIsClick3]=useContext(Context);
-  // const [IsClick4,setIsClick4]=useContext(Context);
-  // const [IsClick5,setIsClick5]=useContext(Context);
+  const [IsClick1, setIsClick1] = React.useState(false);
+  const [IsClick2, setIsClick2] = React.useState(false);
+  const [IsClick3, setIsClick3] = React.useState(false);
+  const [IsClick4, setIsClick4] = React.useState(false);
+  const [IsClick5, setIsClick5] = React.useState(false);
+  useEffect(()=>{
+    const ticketState1=JSON.parse(localStorage.getItem("ticketState1"));
+    const ticketState2=JSON.parse(localStorage.getItem("ticketState2"));
+    const ticketState3=JSON.parse(localStorage.getItem("ticketState3"));
+    const ticketState4=JSON.parse(localStorage.getItem("ticketState4"));
+    const ticketState5=JSON.parse(localStorage.getItem("ticketState5"));
+    if(ticketState1==="state:true"){
+      setIsClick1(true);
+    }
+    if(ticketState2==="state:true"){
+      setIsClick2(true);
+    }
+    if(ticketState3==="state:true"){
+      setIsClick3(true);
+    }
+    if(ticketState4==="state:true"){
+      setIsClick4(true);
+    }
+    if(ticketState5==="state:true"){
+      setIsClick5(true);
+    }
+  },[]);
   return (
     // NavBar Start
     <StyledAppNavBar>
@@ -29,10 +50,15 @@ const Ticket = () => {
         onClick={() => {
           if (IsClick1 === false) {
             setIsClick1(true);
-            // setIsClick2(false);
-            // setIsClick3(false);
-            // setIsClick4(false);
-            // setIsClick5(false);
+            localStorage.setItem("ticketState1",JSON.stringify("state:true"));
+            setIsClick2(false);
+            localStorage.removeItem("ticketState2");
+            setIsClick3(false);
+            localStorage.removeItem("ticketState3");
+            setIsClick4(false);
+            localStorage.removeItem("ticketState4");
+            setIsClick5(false);
+            localStorage.removeItem("ticketState5");
           }
         }}
       >
@@ -64,20 +90,25 @@ const Ticket = () => {
       {/* Ticket1 End */}
 
       {/* Ticket2 Start */}
-      {/* <StyledAppNavBarTicket
+      <StyledAppNavBarTicket
         onClick={() => {
-          if (ctx.IsClick2 === false) {
-            ctx.setIsClick1(false);
-            ctx.setIsClick2(true);
-            ctx.setIsClick3(false);
-            ctx.setIsClick4(false);
-            ctx.setIsClick5(false);
+          if (IsClick2 === false) {
+            setIsClick1(false);
+            localStorage.removeItem("ticketState1");
+            setIsClick2(true);
+            localStorage.setItem("ticketState2",JSON.stringify("state:true"));
+            setIsClick3(false);
+            localStorage.removeItem("ticketState3");
+            setIsClick4(false);
+            localStorage.removeItem("ticketState4");
+            setIsClick5(false);
+            localStorage.removeItem("ticketState5");
           }
         }}
         >
         <span>
           <LinkStyle to="/ticketinfo">
-            {ctx.IsClick2 ? (
+            {IsClick2 ? (
               <FontAwesomeIcon
               icon={faTicket}
               style={{ left: "-20%" }}
@@ -87,7 +118,7 @@ const Ticket = () => {
               <FontAwesomeIcon icon={faTicket} className="Icon" />
               )}
           </LinkStyle>
-          {ctx.IsClick2 ? (
+          {IsClick2 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -99,24 +130,29 @@ const Ticket = () => {
             </div>
           )}
         </span>
-      </StyledAppNavBarTicket> */}
+      </StyledAppNavBarTicket>
       {/* Ticket2 End */}
 
       {/* Ticket3 Start */}
-      {/* <StyledAppNavBarTicket
+      <StyledAppNavBarTicket
         onClick={() => {
-          if (ctx.IsClick3 === false) {
-            ctx.setIsClick1(false);
-            ctx.setIsClick2(false);
-            ctx.setIsClick3(true);
-            ctx.setIsClick4(false);
-            ctx.setIsClick5(false);
+          if (IsClick3 === false) {
+            setIsClick1(false);
+            localStorage.removeItem("ticketState1");
+            setIsClick2(false);
+            localStorage.removeItem("ticketState2");
+            setIsClick3(true);
+            localStorage.setItem("ticketState3",JSON.stringify("state:true"));
+            setIsClick4(false);
+            localStorage.removeItem("ticketState4");
+            setIsClick5(false);
+            localStorage.removeItem("ticketState5");
           }
         }}
         >
         <span>
           <LinkStyle to="/transport">
-            {ctx.IsClick3 ? (
+            {IsClick3 ? (
               <FontAwesomeIcon
               icon={faVanShuttle}
               style={{ left: "-20%" }}
@@ -126,7 +162,7 @@ const Ticket = () => {
                 <FontAwesomeIcon icon={faVanShuttle} className="Icon" />
                 )}
           </LinkStyle>
-          {ctx.IsClick3 ? (
+          {IsClick3 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -138,24 +174,29 @@ const Ticket = () => {
             </div>
           )}
         </span>
-      </StyledAppNavBarTicket> */}
+      </StyledAppNavBarTicket>
       {/* Ticket3 End */}
 
       {/* Ticket4 Start */}
-      {/* <StyledAppNavBarTicket
+      <StyledAppNavBarTicket
         onClick={() => {
-          if (ctx.IsClick4 === false) {
-            ctx.setIsClick1(false);
-            ctx.setIsClick2(false);
-            ctx.setIsClick3(false);
-            ctx.setIsClick4(true);
-            ctx.setIsClick5(false);
+          if (IsClick4 === false) {
+            setIsClick1(false);
+            localStorage.removeItem("ticketState1");
+            setIsClick2(false);
+            localStorage.removeItem("ticketState2");
+            setIsClick3(false);
+            localStorage.removeItem("ticketState3");
+            setIsClick4(true);
+            localStorage.setItem("ticketState4",JSON.stringify("state:true"));
+            setIsClick5(false);
+            localStorage.removeItem("ticketState5");
           }
         }}
         >
         <span>
           <LinkStyle to="/archives">
-            {ctx.IsClick4 ? (
+            {IsClick4 ? (
               <FontAwesomeIcon
               icon={faFolderOpen}
               style={{ left: "-20%" }}
@@ -165,7 +206,7 @@ const Ticket = () => {
                 <FontAwesomeIcon icon={faFolderOpen} className="Icon" />
                 )}
           </LinkStyle>
-          {ctx.IsClick4 ? (
+          {IsClick4 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -177,24 +218,29 @@ const Ticket = () => {
             </div>
           )}
         </span>
-      </StyledAppNavBarTicket> */}
+      </StyledAppNavBarTicket>
       {/* Ticket4 End */}
 
       {/* Ticket5 Start */}
-      {/* <StyledAppNavBarTicket
+      <StyledAppNavBarTicket
         onClick={() => {
-          if (ctx.IsClick5 === false) {
-            ctx.setIsClick1(false);
-            ctx.setIsClick2(false);
-            ctx.setIsClick3(false);
-            ctx.setIsClick4(false);
-            ctx.setIsClick5(true);
+          if (IsClick5 === false) {
+            setIsClick1(false);
+            localStorage.removeItem("ticketState1");
+            setIsClick2(false);
+            localStorage.removeItem("ticketState2");
+            setIsClick3(false);
+            localStorage.removeItem("ticketState3");
+            setIsClick4(false);
+            localStorage.removeItem("ticketState4");
+            setIsClick5(true);
+            localStorage.setItem("ticketState5",JSON.stringify("state:true"));
           }
         }}
         >
         <span>
           <LinkStyle to="/contact-us">
-            {ctx.IsClick5 ? (
+            {IsClick5 ? (
               <FontAwesomeIcon
               icon={faMessage}
               style={{ left: "-20%" }}
@@ -204,7 +250,7 @@ const Ticket = () => {
                 <FontAwesomeIcon icon={faMessage} className="Icon" />
                 )}
           </LinkStyle>
-          {ctx.IsClick5 ? (
+          {IsClick5 ? (
             <div>
               <PutTicketRip />
               <PutTicketRip2 />
@@ -216,7 +262,7 @@ const Ticket = () => {
             </div>
           )}
         </span>
-      </StyledAppNavBarTicket> */}
+      </StyledAppNavBarTicket>
       {/* Ticket5 End */}
     </StyledAppNavBar>
     // NavBar End
