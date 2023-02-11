@@ -10,13 +10,13 @@ const Title = () => {
   const {setIsClick3}=Ticket();
   const {setIsClick4}=Ticket();
   const {setIsClick5}=Ticket();
-  useEffect(()=>{
-    localStorage.removeItem("ticketState1");
-    localStorage.removeItem("ticketState2");
-    localStorage.removeItem("ticketState3");
-    localStorage.removeItem("ticketState4");
-    localStorage.removeItem("ticketState5");
-  },[]);
+  function removeLocalStorage(){
+    localStorage.removeItem('ticketState1');
+    localStorage.removeItem('ticketState2');
+    localStorage.removeItem('ticketState3');
+    localStorage.removeItem('ticketState4');
+    localStorage.removeItem('ticketState5');
+  }
   return (
     // Title Start
     <StyledAppTitle>
@@ -31,6 +31,7 @@ const Title = () => {
             padding: "15px 10px",
           }}
           onClick={(()=>{
+            removeLocalStorage();
             setIsClick1(false);
             setIsClick2(false);
             setIsClick3(false);
