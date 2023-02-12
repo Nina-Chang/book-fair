@@ -244,7 +244,6 @@ const Bulletin = styled.div`
     position: absolute;
     bottom:4%;
     left: 5%;
-    z-index: 2;
   }
   .button{
     width: 110px;
@@ -254,6 +253,7 @@ const Bulletin = styled.div`
     color: white;
     background-color: #818B8C;
     border-radius: 10px;
+
   }
   @media (min-width: 450px) {
     .text sub{
@@ -277,26 +277,11 @@ const Bulletin = styled.div`
   @media (min-width: 490px) {
     .text sub{
       background-color: transparent;
-      /* &:nth-of-type(1){
-        display: block;
-      }
-      &:nth-of-type(2){
-        display: block;
-      }
-      &:nth-of-type(3){
-        display: block;
-      } */
       &:nth-of-type(4){
         display: block;
       }
     }
     ${LinkStyle}{
-      /* &:nth-of-type(3){
-        display: block;
-      }
-      &:nth-of-type(4){
-        display: block;
-      } */
       &:nth-of-type(5){
         display: block;
       }
