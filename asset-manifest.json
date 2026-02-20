@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/book-fair/static/css/main.3eef5e9b.css",
+    "main.js": "/book-fair/static/js/main.2f341b62.js",
+    "static/js/787.6a36299d.chunk.js": "/book-fair/static/js/787.6a36299d.chunk.js",
+    "static/media/index-page.jpg": "/book-fair/static/media/index-page.0e1c7ad5fda64b8d35c0.jpg",
+    "static/media/Book-1.jpg": "/book-fair/static/media/Book-1.1378d7ca811dacd686f1.jpg",
+    "static/media/wood.jpg": "/book-fair/static/media/wood.e2a900633042532675e9.jpg",
+    "static/media/archive1.webp": "/book-fair/static/media/archive1.7407e490951a0ebf722a.webp",
+    "static/media/IG-1-removebg.png": "/book-fair/static/media/IG-1-removebg.9b01805141ce8f9d2475.png",
+    "static/media/ticket-yellow-removebg.png": "/book-fair/static/media/ticket-yellow-removebg.83c0c39c187c419b4702.png",
+    "static/media/Book-3.jpg": "/book-fair/static/media/Book-3.27eda4dd3af94f5ff772.jpg",
+    "static/media/archive2.webp": "/book-fair/static/media/archive2.ec80c1b352840f0665e5.webp",
+    "static/media/Book-background.png": "/book-fair/static/media/Book-background.b39aa4a6fbfa4d82575d.png",
+    "static/media/Book-2.jpg": "/book-fair/static/media/Book-2.2dddb9cbff53bf853d6d.jpg",
+    "static/media/twitter.png": "/book-fair/static/media/twitter.f08341ead109c7dd8fbc.png",
+    "static/media/Book-4.jpg": "/book-fair/static/media/Book-4.9d17ca3d09229190aa33.jpg",
+    "static/media/Book-5.jpg": "/book-fair/static/media/Book-5.6a2673f27f414b3522f1.jpg",
+    "static/media/ribbon-sm-1.png": "/book-fair/static/media/ribbon-sm-1.0d1127376a86ea7d844b.png",
+    "static/media/ticket-ripped-2-brown-sm.png": "/book-fair/static/media/ticket-ripped-2-brown-sm.549226af531670e4f3d3.png",
+    "static/media/Youtube.png": "/book-fair/static/media/Youtube.7b466bc7ccb5b9a8a366.png",
+    "index.html": "/book-fair/index.html",
+    "main.3eef5e9b.css.map": "/book-fair/static/css/main.3eef5e9b.css.map",
+    "main.2f341b62.js.map": "/book-fair/static/js/main.2f341b62.js.map",
+    "787.6a36299d.chunk.js.map": "/book-fair/static/js/787.6a36299d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3eef5e9b.css",
+    "static/js/main.2f341b62.js"
+  ]
+}
