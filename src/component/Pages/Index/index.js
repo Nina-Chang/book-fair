@@ -1,6 +1,7 @@
 import { faBackspace, faTemperature1 } from "@fortawesome/free-solid-svg-icons";
 import { Controller, Scene } from "react-scrollmagic";
-import { Timeline, Tween } from "react-gsap";
+// import { Timeline, Tween } from "gsap";
+// import { Timeline, Tween } from "react-gsap";
 import React from "react";
 import styled from "styled-components";
 import indexPage from "../../../image/index-page.jpg";
@@ -686,6 +687,42 @@ const Section2 = () => {
           <LinkStyle to="#!" className="btn">
             <div className="button">看更多</div>
           </LinkStyle>
+          {/* <div className="text">
+            <span>最新消息</span>
+            <br />
+            <LinkStyle to="#!">
+              <div>2023年11月16日</div>
+              2023台北國際書展「城市在閱讀」活動開放線上報名
+            </LinkStyle>
+            <br />
+            <sub>------------------------------------------------------------</sub>
+            <br />
+            <LinkStyle to="#!">
+              <div>2023年11月15日</div>
+              「2023金蝶獎-台灣出版設計大獎」13本入圍名單出爐 選紙、文字
+              單純設計搶眼
+            </LinkStyle>
+            <br />
+            <sub>------------------------------------------------------------</sub>
+            <br />
+            <LinkStyle to="#!">
+              <div>2023年11月03日</div>
+              超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展
+              中、英文紀錄片　Youtube上線！
+            </LinkStyle>
+            <sub>------------------------------------------------------------</sub>
+            <br />
+            <LinkStyle to="#!">
+              <div>2023年11月01日</div>
+              2023台北國際書展 主視覺出爐 引爆閱讀的多重宇宙
+            </LinkStyle>
+            <sub>------------------------------------------------------------</sub>
+            <br />
+            <LinkStyle to="#!">
+              <div>2023年10月17日</div>
+              2023台北國際書展 「寒假趣書展」及偏鄉學校補助，10月21日開放報名
+            </LinkStyle>
+          </div> */}
         </Bulletin>
       </StyledSection2Container>
     </React.Fragment>
@@ -754,54 +791,21 @@ const Index = () => {
         <div className="sec2">
           <Scene pin={true} duration={100} triggerElement=".sec2">
             {(progress) => (
-              <Timeline wrapper={<Bulletin />} totalProgress={progress} paused>
-                <Tween>
-                  <Section2 />
-                </Tween>
-                <Tween
-                  from={{ opacity: 0 }}
-                  to={{ opacity: 1, ease: "Power4.easeInOut" }}
-                >
-                  <div className="text">
-                    <span>最新消息</span>
-                    <br />
-                    <LinkStyle to="#!">
-                      <div>2023年11月16日</div>
-                      2023台北國際書展「城市在閱讀」活動開放線上報名
-                    </LinkStyle>
-                    <br />
-                    <sub>------------------------------------------------------------</sub>
-                    <br />
-                    <LinkStyle to="#!">
-                      <div>2023年11月15日</div>
-                      「2023金蝶獎-台灣出版設計大獎」13本入圍名單出爐 選紙、文字
-                      單純設計搶眼
-                    </LinkStyle>
-                    <br />
-                    <sub>------------------------------------------------------------</sub>
-                    <br />
-                    <LinkStyle to="#!">
-                      <div>2023年11月03日</div>
-                      超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展
-                      中、英文紀錄片　Youtube上線！
-                    </LinkStyle>
-                    {/* <br /> */}
-                    <sub>------------------------------------------------------------</sub>
-                    <br />
-                    <LinkStyle to="#!">
-                      <div>2023年11月01日</div>
-                      2023台北國際書展 主視覺出爐 引爆閱讀的多重宇宙
-                    </LinkStyle>
-                    {/* <br /> */}
-                    <sub>------------------------------------------------------------</sub>
-                    <br />
-                    <LinkStyle to="#!">
-                      <div>2023年10月17日</div>
-                      2023台北國際書展 「寒假趣書展」及偏鄉學校補助，10月21日開放報名
-                    </LinkStyle>
-                  </div>
-                </Tween>
-              </Timeline>
+              // <Timeline wrapper={<Bulletin />} totalProgress={progress} paused>
+              //   <Tween>
+              <div>
+                <Section2 />
+                
+              </div>
+                  
+              //   </Tween>
+              //   <Tween
+              //     from={{ opacity: 0 }}
+              //     to={{ opacity: 1, ease: "Power4.easeInOut" }}
+              //   >
+                  
+              //   </Tween>
+              // </Timeline>
             )}
           </Scene>
         </div>
