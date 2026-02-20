@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/book-fair/static/css/main.3eef5e9b.css",
-    "main.js": "/book-fair/static/js/main.31139d4e.js",
+    "main.js": "/book-fair/static/js/main.224ae7ac.js",
     "static/js/787.6a36299d.chunk.js": "/book-fair/static/js/787.6a36299d.chunk.js",
     "static/media/index-page.jpg": "/book-fair/static/media/index-page.0e1c7ad5fda64b8d35c0.jpg",
     "static/media/Book-1.jpg": "/book-fair/static/media/Book-1.1378d7ca811dacd686f1.jpg",
@@ -21,11 +21,11 @@
     "static/media/Youtube.png": "/book-fair/static/media/Youtube.7b466bc7ccb5b9a8a366.png",
     "index.html": "/book-fair/index.html",
     "main.3eef5e9b.css.map": "/book-fair/static/css/main.3eef5e9b.css.map",
-    "main.31139d4e.js.map": "/book-fair/static/js/main.31139d4e.js.map",
+    "main.224ae7ac.js.map": "/book-fair/static/js/main.224ae7ac.js.map",
     "787.6a36299d.chunk.js.map": "/book-fair/static/js/787.6a36299d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3eef5e9b.css",
-    "static/js/main.31139d4e.js"
+    "static/js/main.224ae7ac.js"
   ]
 }
