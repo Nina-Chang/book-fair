@@ -16,12 +16,12 @@ const App=()=>{
         <ScrollToTop>
             <Routes>
                 <Route path='/' element={<Layout/>}>
-                    <Route path='/' element={<Index/>}></Route>
-                    <Route path='/exhibitor' element={<Exhibitor/>}></Route>
-                    <Route path='/ticketinfo' element={<TicketInfo/>}></Route>
-                    <Route path='/transport' element={<Transport/>}></Route>
-                    <Route path='/archives' element={<Archives/>}></Route>
-                    <Route path='/contact-us' element={<ContactUs/>}></Route>
+                    <Route index element={<Index/>}></Route>
+                    <Route path='exhibitor' element={<Exhibitor/>}></Route>
+                    <Route path='ticketinfo' element={<TicketInfo/>}></Route>
+                    <Route path='transport' element={<Transport/>}></Route>
+                    <Route path='archives' element={<Archives/>}></Route>
+                    <Route path='contact-us' element={<ContactUs/>}></Route>
                 </Route>
             </Routes>
         </ScrollToTop>
