@@ -743,67 +743,68 @@ const Index = () => {
     <StyledAppContainer>
       <Controller globalSceneOptions={{ triggerHook: "onCenter" }}>
         {/* Index-Content Section1 Start */}
-        <div className="sec1"></div>
-        <Scene pin={true} duration={100} triggerElement=".sec1">
-          <Section1 />
-        </Scene>
+        <div className="sec1">
+          <Scene pin={true} duration={100} triggerElement=".sec1">
+            <Section1 />
+          </Scene>
+        </div>
         {/* Index-Content Section1 End */}
 
         {/* Index-Content Section2 Start */}
-        <div className="sec2"></div>
-        <Scene pin={true} duration={100} triggerElement=".sec2">
-          {(progress) => (
-            <Timeline wrapper={<Bulletin />} totalProgress={progress} paused>
-              <Tween>
-                <Section2 />
-              </Tween>
-              <Tween
-                from={{ opacity: 0 }}
-                to={{ opacity: 1, ease: "Power4.easeInOut" }}
-                duration={4000}
-              >
-                <div className="text">
-                  <span>最新消息</span>
-                  <br />
-                  <LinkStyle to="#!">
-                    <div>2023年11月16日</div>
-                    2023台北國際書展「城市在閱讀」活動開放線上報名
-                  </LinkStyle>
-                  <br />
-                  <sub>------------------------------------------------------------</sub>
-                  <br />
-                  <LinkStyle to="#!">
-                    <div>2023年11月15日</div>
-                    「2023金蝶獎-台灣出版設計大獎」13本入圍名單出爐 選紙、文字
-                    單純設計搶眼
-                  </LinkStyle>
-                  <br />
-                  <sub>------------------------------------------------------------</sub>
-                  <br />
-                  <LinkStyle to="#!">
-                    <div>2023年11月03日</div>
-                    超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展
-                    中、英文紀錄片　Youtube上線！
-                  </LinkStyle>
-                  {/* <br /> */}
-                  <sub>------------------------------------------------------------</sub>
-                  <br />
-                  <LinkStyle to="#!">
-                    <div>2023年11月01日</div>
-                    2023台北國際書展 主視覺出爐 引爆閱讀的多重宇宙
-                  </LinkStyle>
-                  {/* <br /> */}
-                  <sub>------------------------------------------------------------</sub>
-                  <br />
-                  <LinkStyle to="#!">
-                    <div>2023年10月17日</div>
-                    2023台北國際書展 「寒假趣書展」及偏鄉學校補助，10月21日開放報名
-                  </LinkStyle>
-                </div>
-              </Tween>
-            </Timeline>
-          )}
-        </Scene>
+        <div className="sec2">
+          <Scene pin={true} duration={100} triggerElement=".sec2">
+            {(progress) => (
+              <Timeline wrapper={<Bulletin />} totalProgress={progress} paused>
+                <Tween>
+                  <Section2 />
+                </Tween>
+                <Tween
+                  from={{ opacity: 0 }}
+                  to={{ opacity: 1, ease: "Power4.easeInOut" }}
+                >
+                  <div className="text">
+                    <span>最新消息</span>
+                    <br />
+                    <LinkStyle to="#!">
+                      <div>2023年11月16日</div>
+                      2023台北國際書展「城市在閱讀」活動開放線上報名
+                    </LinkStyle>
+                    <br />
+                    <sub>------------------------------------------------------------</sub>
+                    <br />
+                    <LinkStyle to="#!">
+                      <div>2023年11月15日</div>
+                      「2023金蝶獎-台灣出版設計大獎」13本入圍名單出爐 選紙、文字
+                      單純設計搶眼
+                    </LinkStyle>
+                    <br />
+                    <sub>------------------------------------------------------------</sub>
+                    <br />
+                    <LinkStyle to="#!">
+                      <div>2023年11月03日</div>
+                      超越疫情！25萬人次一起閱讀趣！ 2022台北國際書展
+                      中、英文紀錄片　Youtube上線！
+                    </LinkStyle>
+                    {/* <br /> */}
+                    <sub>------------------------------------------------------------</sub>
+                    <br />
+                    <LinkStyle to="#!">
+                      <div>2023年11月01日</div>
+                      2023台北國際書展 主視覺出爐 引爆閱讀的多重宇宙
+                    </LinkStyle>
+                    {/* <br /> */}
+                    <sub>------------------------------------------------------------</sub>
+                    <br />
+                    <LinkStyle to="#!">
+                      <div>2023年10月17日</div>
+                      2023台北國際書展 「寒假趣書展」及偏鄉學校補助，10月21日開放報名
+                    </LinkStyle>
+                  </div>
+                </Tween>
+              </Timeline>
+            )}
+          </Scene>
+        </div>
         {/* Index-Content Section2 End */}
 
         {/* Index-Content Section3 Start */}
